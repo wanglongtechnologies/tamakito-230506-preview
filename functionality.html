@@ -1,0 +1,83 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functionality Demo</title>
+  </head>
+  <body>
+    <p>Band: <span id="s_band"></span></p>
+    <select name="variations" data-type="band">
+      <option disabled selected></option>
+      <option value="1" data-option-name="A">A</option>
+      <option value="2" data-option-name="B">B</option>
+      <option value="3" data-option-name="C">C</option>
+      <option value="4" data-option-name="D">D</option>
+      <option value="5" data-option-name="E">E</option>
+    </select>
+
+    <p>Setting: <span id="s_setting"></span></p>
+    <select name="variations" data-type="setting">
+      <option disabled selected></option>
+      <option value="1" data-option-name="A">A</option>
+      <option value="2" data-option-name="B">B</option>
+      <option value="3" data-option-name="C">C</option>
+      <option value="4" data-option-name="D">D</option>
+      <option value="5" data-option-name="E">E</option>
+    </select>
+
+    <p>Stone: <span id="s_stone"></span></p>
+    <select name="variations" data-type="stone">
+      <option disabled selected></option>
+      <option value="1" data-option-name="A">A</option>
+      <option value="2" data-option-name="B">B</option>
+      <option value="3" data-option-name="C">C</option>
+      <option value="4" data-option-name="D">D</option>
+      <option value="5" data-option-name="E">E</option>
+    </select>
+
+    <p>Prong: <span id="s_prong"></span></p>
+    <select name="variations" data-type="prong">
+      <option disabled selected></option>
+      <option value="1" data-option-name="A">A</option>
+      <option value="2" data-option-name="B">B</option>
+      <option value="3" data-option-name="C">C</option>
+      <option value="4" data-option-name="D">D</option>
+      <option value="5" data-option-name="E">E</option>
+    </select>
+
+    <br /><br />
+
+    <form method="GET">
+      <label>Hidden Band:</label>
+      <input type="number" required name="f_band" id="f_band" /><br />
+      <label>Hidden Setting:</label>
+      <input type="number" required name="f_setting" id="f_setting" /><br />
+      <label>Hidden Stone:</label>
+      <input type="number" required name="f_stone" id="f_stone" /><br />
+      <label>Hidden Prong:</label>
+      <input type="number" required name="f_prong" id="f_prong" /><br />
+      <br />
+      <label>Name:</label>
+      <input type="text" required name="u_name" /><br />
+      <label>Email:</label>
+      <input type="email" required name="u_email" /><br />
+      <label>Phone:</label>
+      <input type="text" required name="u_phone" /><br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      document.querySelectorAll('select[name="variations"]').forEach((variation) => {
+        variation.addEventListener('change', (e) => {
+          document.querySelector(`#s_${variation.dataset.type}`).innerHTML = e.target.options[e.target.selectedIndex].dataset.optionName;
+          document.querySelector(`#f_${variation.dataset.type}`).value = e.target.value;
+        });
+      });
+    </script>
+    >
+  </body>
+</html>
