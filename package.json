@@ -1,0 +1,23 @@
+{
+  "name": "tamakito",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "html"
+    }
+  },
+  "scripts": {
+    "build": "npx tailwindcss -i tailwind.css -o src/assets/css/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "WANGLONG",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.3"
+  }
+}
