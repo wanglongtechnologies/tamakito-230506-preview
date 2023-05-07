@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.3.3/dist/cdn.min.js"
+      defer
+    ></script>
+    <title>Customise Ring & Gem | TAMAKITO Jewellery</title>
+  </head>
+  <body>
+    <div class="max-w-3xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="lg:grid lg:grid-cols-2 lg:border sm:border-gray-300 h-full">
+        <div class="border border-gray-300 lg:border-none mb-4 lg:mb-0">
+          <img
+            class="w-full max-h-96 lg:max-h-none object-contain"
+            src="assets/img/band/band-preview.jpeg"
+            alt=""
+          />
+        </div>
+        <div class="bg-gray-50 lg:p-4 lg:border-l lg:border-gray-300">
+          <div
+            x-data="{
+            openAccordion: null,
+            selections: { part1: '', part2: '', part3: '' },
+            showSubmitModal: false,
+            showVideoModal: false,
+            currentVideo: '',
+            name: '',
+            email: '',
+            phone: '',
+            getIndex(id) { return id.split('-')[1]; },
+            allPartsSelected() {
+                return Object.values(this.selections).every(selection => selection !== '');
+            },
+            anyPartSelected() {
+                return Object.values(this.selections).some(selection => selection !== '');
+            },
+            thisPartSelected(part) {
+                return this.selections[part] !== '';
+            },
+            openVideoModal(videoUrl) {
+                this.currentVideo = videoUrl;
+                this.showVideoModal = true;
+                console.log(this.currentVideo, this.showVideoModal)
+            },
+            closeVideoModal() {
+                this.showVideoModal = false;
+                setTimeout(() => {
+                    this.currentVideo = '';
+                  }, 300);
+            },
+        }"
+            class="flex justify-between flex-col h-full"
+          >
+            <div>
+              <template
+                x-for="(item, index) in [
+                    {
+                        title: 'Band Style',
+                        video: 'yB1odIgnDAc',
+                        options: [
+                            { id: 'p1-1', name: 'Knife Edge', imageSrc: 'assets/img/band/band/1.png' },
+                            { id: 'p1-2', name: 'Round Edge', imageSrc: 'assets/img/band/band/2.png' },
+                            { id: 'p1-3', name: 'Square Edge', imageSrc: 'assets/img/band/band/3.png' },
+                            { id: 'p1-4', name: 'Tapered', imageSrc: 'assets/img/band/band/4.png' },
+                            { id: 'p1-5', name: 'Twist', imageSrc: 'assets/img/band/band/5.png' },
+                        ]
+                    },
+                    {
+                        title: 'Accent Stones',
+                        video: 'UM2h4jzEcsQ',
+                        options: [
+                        { id: 'p2-1', name: 'Bead', imageSrc: 'assets/img/band/stone/1.jpeg' },
+                        { id: 'p2-2', name: 'Pave', imageSrc: 'assets/img/band/stone/2.jpeg' },
+                        { id: 'p2-3', name: 'None', imageSrc: 'assets/img/band/stone/3.jpeg' },
+                        ]
+                    },
+                    {
+                        title: 'Band Material',
+                        type: 'material',
+                        video: 'Rvb4JSFg3Yw',
+                        options: [
+                            { id: 'p3-1', name: 'Silver', imageSrc: 'assets/img/band/color/1.jpeg' },
+                            { id: 'p3-2', name: 'Rose Gold', imageSrc: 'assets/img/band/color/2.jpeg' },
+                            { id: 'p3-3', name: 'White Gold', imageSrc: 'assets/img/band/color/3.jpeg' },
+                            { id: 'p3-4', name: 'Yellow Gold', imageSrc: 'assets/img/band/color/4.jpeg' },
+                        ]
+                    },
+                ]"
+              >
+                <div class="mb-3">
+                  <button
+                    @click="openAccordion === index ? openAccordion = null : openAccordion = index"
+                    class="w-full px-4 py-3 text-left flex items-center justify-between text-sm text-white bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none"
+                  >
+                    <span class="flex-shrink-0 flex items-center">
+                      <span
+                        x-show="!thisPartSelected(`part${index + 1}`)"
+                        class="rounded-full border inline-flex justify-center items-center h-7 w-7 border-white/50"
+                        x-text="index + 1"
+                      ></span>
+                      <span
+                        x-show="thisPartSelected(`part${index + 1}`)"
+                        class="rounded-full bg-white text-[#464669] inline-flex justify-center items-center h-7 w-7"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <mask
+                            id="mask0_3_11156"
+                            style="mask-type: alpha"
+                            maskUnits="userSpaceOnUse"
+                            x="0"
+                            y="0"
+                            width="24"
+                            height="24"
+                          >
+                            <rect width="24" height="24" fill="currentColor" />
+                          </mask>
+                          <g mask="url(#mask0_3_11156)">
+                            <path
+                              d="M9.55001 18L3.85001 12.3L5.27501 10.875L9.55001 15.15L18.725 5.97498L20.15 7.39998L9.55001 18Z"
+                              fill="currentColor"
+                            />
+                          </g>
+                        </svg>
+                      </span>
+                      <span class="ml-2" x-text="item.title"></span>
+                    </span>
+                    <span class="truncate flex-grow text-right">
+                      <span
+                        x-show="selections[`part${index + 1}`]"
+                        class="mx-4 text-sm opacity-80"
+                      >
+                        <template x-if="selections[`part${index + 1}`]">
+                          <span
+                            x-text="item.options.find(o => o.id === selections[`part${index + 1}`]).name"
+                          ></span>
+                        </template>
+                      </span>
+                    </span>
+                    <span
+                      @click.stop="openVideoModal(item.video)"
+                      class="inline-block group"
+                    >
+                      <svg
+                        class="w-5 h-5 text-white group-hover:opacity-100 opacity-70 transition"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_51_1068"
+                          style="mask-type: alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="currentColor" />
+                        </mask>
+                        <g mask="url(#mask0_51_1068)">
+                          <path
+                            d="M11.95 18C12.3 18 12.5958 17.8792 12.8375 17.6375C13.0792 17.3958 13.2 17.1 13.2 16.75C13.2 16.4 13.0792 16.1042 12.8375 15.8625C12.5958 15.6208 12.3 15.5 11.95 15.5C11.6 15.5 11.3042 15.6208 11.0625 15.8625C10.8208 16.1042 10.7 16.4 10.7 16.75C10.7 17.1 10.8208 17.3958 11.0625 17.6375C11.3042 17.8792 11.6 18 11.95 18ZM11.05 14.15H12.9C12.9 13.6 12.9625 13.1667 13.0875 12.85C13.2125 12.5333 13.5667 12.1 14.15 11.55C14.5833 11.1167 14.925 10.7042 15.175 10.3125C15.425 9.92083 15.55 9.45 15.55 8.9C15.55 7.96667 15.2083 7.25 14.525 6.75C13.8417 6.25 13.0333 6 12.1 6C11.15 6 10.3792 6.25 9.7875 6.75C9.19583 7.25 8.78333 7.85 8.55 8.55L10.2 9.2C10.2833 8.9 10.4708 8.575 10.7625 8.225C11.0542 7.875 11.5 7.7 12.1 7.7C12.6333 7.7 13.0333 7.84583 13.3 8.1375C13.5667 8.42917 13.7 8.75 13.7 9.1C13.7 9.43333 13.6 9.74583 13.4 10.0375C13.2 10.3292 12.95 10.6 12.65 10.85C11.9167 11.5 11.4667 11.9917 11.3 12.325C11.1333 12.6583 11.05 13.2667 11.05 14.15ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22Z"
+                            fill="currentColor"
+                          />
+                        </g>
+                      </svg>
+                    </span>
+                  </button>
+                  <div
+                    x-show.transition.duration.150="openAccordion === index"
+                    class="p-4 border border-t-0 border-gray-300 bg-white"
+                  >
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                      <template x-for="option in item.options">
+                        <label
+                          :for="option.id"
+                          class="relative cursor-pointer group"
+                        >
+                          <input
+                            type="radio"
+                            x-model="selections[`part${index + 1}`]"
+                            :id="option.id"
+                            :value="option.id"
+                            class="sr-only"
+                          />
+                          <img
+                            :src="option.imageSrc"
+                            class="w-full aspect-[1/0.8] object-cover border border-b-0 transition"
+                            :class="{ 'border-[#464669]': selections[`part${index + 1}`] === option.id, 'border-gray-300': selections[`part${index + 1}`] !== option.id }"
+                          />
+                          <div
+                            x-show="selections[`part${index + 1}`] !== option.id"
+                            class="absolute top-0 left-0 w-full h-full group-hover:bg-[#4B4B89] opacity-5"
+                          ></div>
+                          <div
+                            x-show="selections[`part${index + 1}`] === option.id"
+                            class="absolute top-0 left-0 w-full h-full bg-[#464669] opacity-5"
+                          ></div>
+                          <div
+                            x-text="option.name"
+                            class="font-serif relative z-10 w-full p-1 text-center group-hover:bg-opacity-100 text-white bg-[#464669] transition"
+                            :class="{ 'bg-opacity-100': selections[`part${index + 1}`] === option.id, 'bg-opacity-80': selections[`part${index + 1}`] !== option.id }"
+                          ></div>
+                        </label>
+                      </template>
+                    </div>
+                  </div>
+                </div>
+              </template>
+              <!-- Video Modal -->
+            </div>
+
+            <div class="flex justify-between gap-4 mt-6">
+              <button
+                :disabled="!anyPartSelected()"
+                @click="selections = { part1: '', part2: '', part3: '' }"
+                class="px-4 py-2 text-[#464669] flex-1 hover:bg-gray-50 focus:outline-none border border-gray-300 bg-white"
+                :class="{ 'cursor-not-allowed opacity-70': !anyPartSelected() }"
+              >
+                Reset
+              </button>
+              <button
+                :disabled="!allPartsSelected()"
+                @click="showSubmitModal = true"
+                class="px-4 py-2 text-white flex-1 bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none"
+                :class="{ 'cursor-not-allowed opacity-70': !allPartsSelected() }"
+              >
+                Submit
+              </button>
+            </div>
+
+            <!-- Submit Modal -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
