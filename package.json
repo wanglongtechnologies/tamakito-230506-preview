@@ -12,7 +12,8 @@
     }
   },
   "scripts": {
-    "build": "npx tailwindcss -i tailwind.css -o src/assets/css/styles.css --watch"
+    "watch": "npx tailwindcss -i tailwind.css -o src/assets/css/styles.css --watch",
+    "build": "npx tailwindcss -i tailwind.css -o src/assets/css/styles.css --build"
   },
   "keywords": [],
   "author": "WANGLONG",

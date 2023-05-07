@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,29 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.3.3/dist/cdn.min.js"
-      defer
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.3.3/dist/cdn.min.js" defer></script>
     <title>Document</title>
   </head>
   <body>
-    <div
-      class="max-w-3xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:h-screen"
-    >
+    <div class="max-w-3xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:h-screen">
       <div class="lg:grid lg:grid-cols-2 border border-gray-300 h-full">
         <div>
-          <img
-            class="w-full h-full object-contain"
-            src="assets/img/band/band-preview.jpeg"
-            alt=""
-          />
+          <img class="w-full h-full object-contain" src="assets/img/band/band-preview.jpeg" alt="" />
         </div>
         <div class="bg-gray-50 p-4 lg:border-l lg:border-gray-300">
           <div
             x-data="{
             openAccordion: null,
-            selections: { part1: '', part2: '', part3: '' },
+            selections: { part0: '', part1: '', part2: '', part3: '' },
             showModal: false,
             name: '',
             email: '',
@@ -43,6 +36,38 @@
             class="flex justify-between flex-col h-full"
           >
             <div>
+              <div class="mb-3">
+                <button @click="openAccordion === -1 ? openAccordion = null : openAccordion = -1" class="w-full px-4 py-3 text-left flex items-center justify-between text-white bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none">
+                  <span>
+                    <span class="rounded-full border inline-flex justify-center items-center h-7 w-7 border-white/50">1</span>
+                    <span class="ml-2">Gem</span>
+                  </span>
+                  <span>
+                    <span x-show="selections['part0']" class="mr-2 text-sm opacity-80">
+                      <span x-show="selections['part0'] === 'd'">Diamond</span>
+                      <span x-show="selections['part0'] === 'cs'">Colored Stones</span>
+                    </span>
+                  </span>
+                </button>
+                <div x-show.transition.duration.150="openAccordion === -1" class="p-4 border border-t-0 border-gray-300 bg-white">
+                  <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <label class="relative cursor-pointer group">
+                      <input type="radio" x-model="selections['part0']" id="p0-1" value="d" class="sr-only" />
+                      <img src="assets/img/customisation/Stone-Shapes-Round-300px-X-300px.jpg" class="w-full aspect-square object-cover border" :class="{ 'border-[#464669]': selections['part0'] === 'd', 'border-gray-300': selections['part0'] !== 'd' }" />
+                      <div x-show="selections['part0'] === 'd'" class="absolute top-0 left-0 w-full h-full bg-[#464669] opacity-10"></div>
+                      <span class="absolute bottom-0 left-0 w-full p-1 text-center text-sm group-hover:bg-opacity-100 text-white bg-[#464669] transition" :class="{ 'bg-opacity-100': selections['part0'] === 'd', 'bg-opacity-80': selections['part0'] !== 'd' }">Diamond</span>
+                    </label>
+
+                    <label class="relative cursor-pointer group">
+                      <input type="radio" x-model="selections['part0']" id="p0-2" value="cs" class="sr-only" />
+                      <img src="assets/img/customisation/Stone-Colour-Peach-300px-X-300px.jpg" class="w-full aspect-square object-cover border" :class="{ 'border-[#464669]': selections['part0'] === 'cs', 'border-gray-300': selections['part0'] !== 'cs' }" />
+                      <div x-show="selections['part0'] === 'cs'" class="absolute top-0 left-0 w-full h-full bg-[#464669] opacity-10"></div>
+                      <span class="absolute bottom-0 left-0 w-full p-1 text-center text-sm group-hover:bg-opacity-100 text-white bg-[#464669] transition" :class="{ 'bg-opacity-100': selections['part0'] === 'cs', 'bg-opacity-80': selections['part0'] !== 'cs' }">Colored Stones</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
               <template
                 x-for="(item, index) in [
                     {
@@ -77,62 +102,28 @@
                     },
                 ]"
               >
-                <div class="mb-3">
-                  <button
-                    @click="openAccordion === index ? openAccordion = null : openAccordion = index"
-                    class="w-full px-4 py-3 text-left flex items-center justify-between text-white bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none"
-                  >
+                <div x-show="selections['part0'] === 'd'" class="mb-3">
+                  <button @click="openAccordion === index ? openAccordion = null : openAccordion = index" class="w-full px-4 py-3 text-left flex items-center justify-between text-white bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none">
                     <span>
-                      <span
-                        class="rounded-full border inline-flex justify-center items-center h-7 w-7 border-white/50"
-                        x-text="index + 1"
-                      ></span>
+                      <span class="rounded-full border inline-flex justify-center items-center h-7 w-7 border-white/50" x-text="index + 2"></span>
                       <span class="ml-2" x-text="item.title"></span>
                     </span>
                     <span>
-                      <span
-                        x-show="selections[`part${index + 1}`]"
-                        class="mr-2 text-sm opacity-80"
-                      >
+                      <span x-show="selections[`part${index + 1}`]" class="mr-2 text-sm opacity-80">
                         <template x-if="selections[`part${index + 1}`]">
-                          <span
-                            x-text="item.options.find(o => o.id === selections[`part${index + 1}`]).name"
-                          ></span>
+                          <span x-text="item.options.find(o => o.id === selections[`part${index + 1}`]).name"></span>
                         </template>
                       </span>
                     </span>
                   </button>
-                  <div
-                    x-show.transition.duration.150="openAccordion === index"
-                    class="p-4 border border-t-0 border-gray-300 bg-white"
-                  >
+                  <div x-show.transition.duration.150="openAccordion === index" class="p-4 border border-t-0 border-gray-300 bg-white">
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                       <template x-for="option in item.options">
-                        <label
-                          :for="option.id"
-                          class="relative cursor-pointer group"
-                        >
-                          <input
-                            type="radio"
-                            x-model="selections[`part${index + 1}`]"
-                            :id="option.id"
-                            :value="option.id"
-                            class="sr-only"
-                          />
-                          <img
-                            :src="option.imageSrc"
-                            class="w-full aspect-square object-cover border"
-                            :class="{ 'border-[#464669]': selections[`part${index + 1}`] === option.id, 'border-gray-300': selections[`part${index + 1}`] !== option.id }"
-                          />
-                          <div
-                            x-show="selections[`part${index + 1}`] === option.id"
-                            class="absolute top-0 left-0 w-full h-full bg-[#464669] opacity-10"
-                          ></div>
-                          <span
-                            x-text="option.name"
-                            class="absolute bottom-0 left-0 w-full p-1 text-center text-sm group-hover:bg-opacity-100 text-white bg-[#464669] transition"
-                            :class="{ 'bg-opacity-100': selections[`part${index + 1}`] === option.id, 'bg-opacity-80': selections[`part${index + 1}`] !== option.id }"
-                          ></span>
+                        <label :for="option.id" class="relative cursor-pointer group">
+                          <input type="radio" x-model="selections[`part${index + 1}`]" :id="option.id" :value="option.id" class="sr-only" />
+                          <img :src="option.imageSrc" class="w-full aspect-square object-cover border" :class="{ 'border-[#464669]': selections[`part${index + 1}`] === option.id, 'border-gray-300': selections[`part${index + 1}`] !== option.id }" />
+                          <div x-show="selections[`part${index + 1}`] === option.id" class="absolute top-0 left-0 w-full h-full bg-[#464669] opacity-10"></div>
+                          <span x-text="option.name" class="absolute bottom-0 left-0 w-full p-1 text-center text-sm group-hover:bg-opacity-100 text-white bg-[#464669] transition" :class="{ 'bg-opacity-100': selections[`part${index + 1}`] === option.id, 'bg-opacity-80': selections[`part${index + 1}`] !== option.id }"></span>
                         </label>
                       </template>
                     </div>
@@ -142,123 +133,43 @@
             </div>
 
             <div class="flex justify-between gap-4 mt-6">
-              <button
-                :disabled="!anyPartSelected()"
-                @click="selections = { part1: '', part2: '', part3: '' }"
-                class="px-4 py-2 text-[#464669] flex-1 hover:bg-gray-50 focus:outline-none border border-gray-300 bg-white"
-                :class="{ 'cursor-not-allowed opacity-70': !anyPartSelected() }"
-              >
-                Reset
-              </button>
-              <button
-                :disabled="!allPartsSelected()"
-                @click="showModal = true"
-                class="px-4 py-2 text-white flex-1 bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none"
-                :class="{ 'cursor-not-allowed opacity-70': !allPartsSelected() }"
-              >
-                Submit
-              </button>
+              <button :disabled="!anyPartSelected()" @click="selections = { part1: '', part2: '', part3: '' }" class="px-4 py-2 text-[#464669] flex-1 hover:bg-gray-50 focus:outline-none border border-gray-300 bg-white" :class="{ 'cursor-not-allowed opacity-70': !anyPartSelected() }">Reset</button>
+              <button :disabled="!allPartsSelected()" @click="showModal = true" class="px-4 py-2 text-white flex-1 bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none" :class="{ 'cursor-not-allowed opacity-70': !allPartsSelected() }">Submit</button>
             </div>
 
             <!-- Modal -->
-            <div
-              x-show="showModal"
-              x-transition:enter="transition ease-out duration-150"
-              x-transition:enter-start="opacity-0"
-              x-transition:enter-end="opacity-100"
-              x-transition:leave="transition ease-in duration-150"
-              x-transition:leave-start="opacity-100"
-              x-transition:leave-end="opacity-0"
-              class="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50"
-            >
-              <div
-                class="w-full max-w-md p-6 mx-auto bg-white shadow-lg relative"
-                @click.away="showModal = false"
-                @click.stop
-              >
-                <button
-                  @click="showModal = false"
-                  class="absolute top-6 right-6 text-xl text-gray-800 hover:text-gray-900 focus:outline-none"
-                >
-                  &#x2715;
-                </button>
+            <div x-show="showModal" x-transition:enter="transition ease-out duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+              <div class="w-full max-w-md p-6 mx-auto bg-white shadow-lg relative" @click.away="showModal = false" @click.stop>
+                <button @click="showModal = false" class="absolute top-6 right-6 text-xl text-gray-800 hover:text-gray-900 focus:outline-none">&#x2715;</button>
 
                 <h2 class="text-xl mb-6">Please fill in your details:</h2>
                 <form method="GET">
-                  <input
-                    type="hidden"
-                    name="f_band"
-                    id="f_band"
-                    :value="getIndex(selections.part1)"
-                  />
-                  <input
-                    type="hidden"
-                    name="f_stone"
-                    id="f_stone"
-                    :value="getIndex(selections.part2)"
-                  />
-                  <input
-                    type="hidden"
-                    name="f_material"
-                    id="f_material"
-                    :value="getIndex(selections.part3)"
-                  />
+                  <input type="hidden" name="f_band" id="f_band" :value="getIndex(selections.part1)" />
+                  <input type="hidden" name="f_stone" id="f_stone" :value="getIndex(selections.part2)" />
+                  <input type="hidden" name="f_material" id="f_material" :value="getIndex(selections.part3)" />
 
                   <div class="grid grid-cols-1 gap-x-8 gap-y-4">
                     <div>
-                      <label
-                        for="u_name"
-                        class="block text-sm font-medium leading-6 text-gray-900"
-                        >Full name</label
-                      >
+                      <label for="u_name" class="block text-sm font-medium leading-6 text-gray-900">Full name</label>
                       <div class="mt-2.5">
-                        <input
-                          type="text"
-                          name="u_name"
-                          required
-                          autocomplete="name"
-                          class="block w-full border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-blue-dark sm:text-sm sm:leading-6"
-                        />
+                        <input type="text" name="u_name" required autocomplete="name" class="block w-full border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-blue-dark sm:text-sm sm:leading-6" />
                       </div>
                     </div>
                     <div>
-                      <label
-                        for="u_phone"
-                        class="block text-sm font-medium leading-6 text-gray-900"
-                        >Phone number</label
-                      >
+                      <label for="u_phone" class="block text-sm font-medium leading-6 text-gray-900">Phone number</label>
                       <div class="mt-2.5">
-                        <input
-                          type="tel"
-                          name="u_phone"
-                          autocomplete="tel"
-                          class="block w-full border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#464669] sm:text-sm sm:leading-6"
-                        />
+                        <input type="tel" name="u_phone" autocomplete="tel" class="block w-full border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#464669] sm:text-sm sm:leading-6" />
                       </div>
                     </div>
                     <div>
-                      <label
-                        for="u_email"
-                        class="block text-sm font-medium leading-6 text-gray-900"
-                        >Email address</label
-                      >
+                      <label for="u_email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                       <div class="mt-2.5">
-                        <input
-                          type="email"
-                          name="u_email"
-                          autocomplete="email"
-                          class="block w-full border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#464669] sm:text-sm sm:leading-6"
-                        />
+                        <input type="email" name="u_email" autocomplete="email" class="block w-full border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#464669] sm:text-sm sm:leading-6" />
                       </div>
                     </div>
                   </div>
                   <div class="flex mt-8">
-                    <button
-                      type="submit"
-                      class="flex items-center py-2 justify-center w-full text-white flex-1 bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none text-sm font-medium"
-                    >
-                      Submit
-                    </button>
+                    <button type="submit" class="flex items-center py-2 justify-center w-full text-white flex-1 bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none text-sm font-medium">Submit</button>
                   </div>
                 </form>
               </div>
