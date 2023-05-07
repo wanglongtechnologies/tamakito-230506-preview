@@ -18,11 +18,11 @@
     <title>Customise Ring & Gem | TAMAKITO Jewellery</title>
   </head>
   <body>
-    <div class="max-w-3xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div class="lg:grid lg:grid-cols-2 lg:border sm:border-gray-300 h-full">
-        <div class="border border-gray-300 lg:border-none mb-4 lg:mb-0">
+    <div class="max-w-3xl px-4 py-8 mx-auto lg:max-w-7xl sm:px-6 lg:px-8">
+      <div class="h-full lg:grid lg:grid-cols-2 lg:border sm:border-gray-300">
+        <div class="mb-4 border border-gray-300 lg:border-none lg:mb-0">
           <img
-            class="w-full max-h-96 lg:max-h-none object-contain"
+            class="object-contain w-full max-h-96 lg:max-h-none"
             src="assets/img/band/band-preview.jpeg"
             alt=""
           />
@@ -60,7 +60,7 @@
                   }, 300);
             },
         }"
-            class="flex justify-between flex-col h-full"
+            class="flex flex-col justify-between h-full"
           >
             <div>
               <template
@@ -103,10 +103,10 @@
                     @click="openAccordion === index ? openAccordion = null : openAccordion = index"
                     class="w-full px-4 py-3 text-left flex items-center justify-between text-sm text-white bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none"
                   >
-                    <span class="flex-shrink-0 flex items-center">
+                    <span class="flex items-center flex-shrink-0">
                       <span
                         x-show="!thisPartSelected(`part${index + 1}`)"
-                        class="rounded-full border inline-flex justify-center items-center h-7 w-7 border-white/50"
+                        class="inline-flex items-center justify-center border rounded-full h-7 w-7 border-white/50"
                         x-text="index + 1"
                       ></span>
                       <span
@@ -114,7 +114,7 @@
                         class="rounded-full bg-white text-[#464669] inline-flex justify-center items-center h-7 w-7"
                       >
                         <svg
-                          class="h-5 w-5"
+                          class="w-5 h-5"
                           viewBox="0 0 24 24"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +140,7 @@
                       </span>
                       <span class="ml-2" x-text="item.title"></span>
                     </span>
-                    <span class="truncate flex-grow text-right">
+                    <span class="flex-grow text-right truncate">
                       <span
                         x-show="selections[`part${index + 1}`]"
                         class="mx-4 text-sm opacity-80"
@@ -157,7 +157,7 @@
                       class="inline-block group"
                     >
                       <svg
-                        class="w-5 h-5 text-white group-hover:opacity-100 opacity-70 transition"
+                        class="w-5 h-5 text-white transition group-hover:opacity-100 opacity-70"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -186,9 +186,9 @@
                   </button>
                   <div
                     x-show.transition.duration.150="openAccordion === index"
-                    class="p-4 border border-t-0 border-gray-300 bg-white"
+                    class="p-4 bg-white border border-t-0 border-gray-300"
                   >
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
                       <template x-for="option in item.options">
                         <label
                           :for="option.id"
@@ -226,6 +226,38 @@
                 </div>
               </template>
               <!-- Video Modal -->
+              <div
+                x-cloak
+                x-show="showVideoModal"
+                x-transition:enter="transition ease-out duration-150"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                class="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50"
+              >
+                <div
+                  x-on:click.away="closeVideoModal()"
+                  class="relative w-full max-w-4xl px-3 pt-8 pb-3 m-4 bg-white shadow-lg lg:pt-12"
+                >
+                  <button
+                    @click="closeVideoModal()"
+                    class="absolute text-lg text-gray-900 top-1 right-4 lg:top-3 lg:right-6 lg:text-xl focus:outline-none"
+                  >
+                    &#x2715;
+                  </button>
+                  <div x-show="currentVideo" class="w-full">
+                    <iframe
+                      class="w-full h-full aspect-video"
+                      :src="`https://www.youtube.com/embed/${currentVideo}`"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="flex justify-between gap-4 mt-6">
@@ -248,6 +280,108 @@
             </div>
 
             <!-- Submit Modal -->
+            <div
+              x-cloak
+              x-show="showSubmitModal"
+              x-transition:enter="transition ease-out duration-150"
+              x-transition:enter-start="opacity-0"
+              x-transition:enter-end="opacity-100"
+              x-transition:leave="transition ease-in duration-150"
+              x-transition:leave-start="opacity-100"
+              x-transition:leave-end="opacity-0"
+              class="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50"
+            >
+              <div
+                class="relative w-full max-w-md p-6 m-4 bg-white shadow-lg"
+                @click.away="showSubmitModal = false"
+                @click.stop
+              >
+                <button
+                  @click="showSubmitModal = false"
+                  class="absolute text-xl text-gray-800 top-6 right-6 hover:text-gray-900 focus:outline-none"
+                >
+                  &#x2715;
+                </button>
+
+                <h2 class="mb-6 text-xl">Please fill in your details:</h2>
+                <form method="GET">
+                  <input
+                    type="hidden"
+                    name="f_band"
+                    id="f_band"
+                    :value="getIndex(selections.part1)"
+                  />
+                  <input
+                    type="hidden"
+                    name="f_stone"
+                    id="f_stone"
+                    :value="getIndex(selections.part2)"
+                  />
+                  <input
+                    type="hidden"
+                    name="f_material"
+                    id="f_material"
+                    :value="getIndex(selections.part3)"
+                  />
+                  <div class="grid grid-cols-1 gap-x-8 gap-y-4">
+                    <div>
+                      <label
+                        for="u_name"
+                        class="block text-sm font-medium leading-6 text-gray-900"
+                        >Full name</label
+                      >
+                      <div class="mt-2.5">
+                        <input
+                          type="text"
+                          name="u_name"
+                          required
+                          autocomplete="name"
+                          class="block w-full border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-blue-dark sm:text-sm sm:leading-6"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label
+                        for="u_phone"
+                        class="block text-sm font-medium leading-6 text-gray-900"
+                        >Phone number</label
+                      >
+                      <div class="mt-2.5">
+                        <input
+                          type="tel"
+                          name="u_phone"
+                          autocomplete="tel"
+                          class="block w-full border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#464669] sm:text-sm sm:leading-6"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label
+                        for="u_email"
+                        class="block text-sm font-medium leading-6 text-gray-900"
+                        >Email address</label
+                      >
+                      <div class="mt-2.5">
+                        <input
+                          type="email"
+                          name="u_email"
+                          autocomplete="email"
+                          class="block w-full border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#464669] sm:text-sm sm:leading-6"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex mt-8">
+                    <button
+                      type="submit"
+                      class="flex items-center py-2 justify-center w-full text-white flex-1 bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none text-sm font-medium"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
