@@ -27,6 +27,7 @@
         showVideoModal(videoUrl) {
           this.dataCurrentPlayingVideo = videoUrl;
           this.isVideoModalOpen = true;
+          window.dispatchEvent(new Event('resize'));
         },
         hideVideoModal() {
           this.isVideoModalOpen = false;
