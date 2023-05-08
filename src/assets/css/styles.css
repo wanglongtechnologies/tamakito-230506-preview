@@ -1,27 +1,21 @@
 /*
 ! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
-*/
-
-/*
+*//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  /* 1 */
-  border-width: 0;
-  /* 2 */
-  border-style: solid;
-  /* 2 */
-  border-color: #e5e7eb;
-  /* 2 */
+#tailwind *,
+#tailwind ::before,
+#tailwind ::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
 }
 
-::before,
-::after {
+#tailwind ::before,
+#tailwind ::after {
   --tw-content: '';
 }
 
@@ -34,22 +28,15 @@
 6. Use the user's configured `sans` font-variation-settings by default.
 */
 
-html {
-  line-height: 1.5;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-  -moz-tab-size: 4;
-  /* 3 */
+html #tailwind {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
-     tab-size: 4;
-  /* 3 */
-  font-family: Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  /* 4 */
-  font-feature-settings: normal;
-  /* 5 */
-  font-variation-settings: normal;
-  /* 6 */
+     tab-size: 4; /* 3 */
+  font-family: Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
 }
 
 /*
@@ -57,11 +44,9 @@ html {
 2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
 */
 
-body {
-  margin: 0;
-  /* 1 */
-  line-height: inherit;
-  /* 2 */
+body #tailwind {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
 }
 
 /*
@@ -70,20 +55,17 @@ body {
 3. Ensure horizontal rules are visible by default.
 */
 
-hr {
-  height: 0;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  border-top-width: 1px;
-  /* 3 */
+#tailwind hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
 }
 
 /*
 Add the correct text decoration in Chrome, Edge, and Safari.
 */
 
-abbr:where([title]) {
+#tailwind abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted;
 }
@@ -92,12 +74,12 @@ abbr:where([title]) {
 Remove the default font size and weight for headings.
 */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+#tailwind h1,
+#tailwind h2,
+#tailwind h3,
+#tailwind h4,
+#tailwind h5,
+#tailwind h6 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -106,7 +88,7 @@ h6 {
 Reset links to optimize for opt-in styling instead of opt-out.
 */
 
-a {
+#tailwind a {
   color: inherit;
   text-decoration: inherit;
 }
@@ -115,8 +97,8 @@ a {
 Add the correct font weight in Edge and Safari.
 */
 
-b,
-strong {
+#tailwind b,
+#tailwind strong {
   font-weight: bolder;
 }
 
@@ -125,21 +107,19 @@ strong {
 2. Correct the odd `em` font sizing in all browsers.
 */
 
-code,
-kbd,
-samp,
-pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+#tailwind code,
+#tailwind kbd,
+#tailwind samp,
+#tailwind pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /*
 Add the correct font size in all browsers.
 */
 
-small {
+#tailwind small {
   font-size: 80%;
 }
 
@@ -147,19 +127,19 @@ small {
 Prevent `sub` and `sup` elements from affecting the line height in all browsers.
 */
 
-sub,
-sup {
+#tailwind sub,
+#tailwind sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
 
-sub {
+#tailwind sub {
   bottom: -0.25em;
 }
 
-sup {
+#tailwind sup {
   top: -0.5em;
 }
 
@@ -169,13 +149,10 @@ sup {
 3. Remove gaps between table borders by default.
 */
 
-table {
-  text-indent: 0;
-  /* 1 */
-  border-color: inherit;
-  /* 2 */
-  border-collapse: collapse;
-  /* 3 */
+#tailwind table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
 }
 
 /*
@@ -184,33 +161,26 @@ table {
 3. Remove default padding in all browsers.
 */
 
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  font-weight: inherit;
-  /* 1 */
-  line-height: inherit;
-  /* 1 */
-  color: inherit;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-  padding: 0;
-  /* 3 */
+#tailwind button,
+#tailwind input,
+#tailwind optgroup,
+#tailwind select,
+#tailwind textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
 }
 
 /*
 Remove the inheritance of text transform in Edge and Firefox.
 */
 
-button,
-select {
+#tailwind button,
+#tailwind select {
   text-transform: none;
 }
 
@@ -219,23 +189,20 @@ select {
 2. Remove default button styles.
 */
 
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  -webkit-appearance: button;
-  /* 1 */
-  background-color: transparent;
-  /* 2 */
-  background-image: none;
-  /* 2 */
+#tailwind button,
+#tailwind [type='button'],
+#tailwind [type='reset'],
+#tailwind [type='submit'] {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
 }
 
 /*
 Use the modern Firefox focus style for all focusable elements.
 */
 
-:-moz-focusring {
+#tailwind :-moz-focusring {
   outline: auto;
 }
 
@@ -243,7 +210,7 @@ Use the modern Firefox focus style for all focusable elements.
 Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
 */
 
-:-moz-ui-invalid {
+#tailwind :-moz-ui-invalid {
   box-shadow: none;
 }
 
@@ -251,7 +218,7 @@ Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/
 Add the correct vertical alignment in Chrome and Firefox.
 */
 
-progress {
+#tailwind progress {
   vertical-align: baseline;
 }
 
@@ -259,8 +226,8 @@ progress {
 Correct the cursor style of increment and decrement buttons in Safari.
 */
 
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
+#tailwind ::-webkit-inner-spin-button,
+#tailwind ::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -269,18 +236,16 @@ Correct the cursor style of increment and decrement buttons in Safari.
 2. Correct the outline style in Safari.
 */
 
-[type='search'] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+#tailwind [type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /*
 Remove the inner padding in Chrome and Safari on macOS.
 */
 
-::-webkit-search-decoration {
+#tailwind ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -289,18 +254,16 @@ Remove the inner padding in Chrome and Safari on macOS.
 2. Change font properties to `inherit` in Safari.
 */
 
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+#tailwind ::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /*
 Add the correct display in Chrome and Safari.
 */
 
-summary {
+#tailwind summary {
   display: list-item;
 }
 
@@ -308,34 +271,34 @@ summary {
 Removes the default spacing and border for appropriate elements.
 */
 
-blockquote,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-figure,
-p,
-pre {
+#tailwind blockquote,
+#tailwind dl,
+#tailwind dd,
+#tailwind h1,
+#tailwind h2,
+#tailwind h3,
+#tailwind h4,
+#tailwind h5,
+#tailwind h6,
+#tailwind hr,
+#tailwind figure,
+#tailwind p,
+#tailwind pre {
   margin: 0;
 }
 
-fieldset {
+#tailwind fieldset {
   margin: 0;
   padding: 0;
 }
 
-legend {
+#tailwind legend {
   padding: 0;
 }
 
-ol,
-ul,
-menu {
+#tailwind ol,
+#tailwind ul,
+#tailwind menu {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -345,7 +308,7 @@ menu {
 Prevent resizing textareas horizontally by default.
 */
 
-textarea {
+#tailwind textarea {
   resize: vertical;
 }
 
@@ -354,35 +317,30 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-input::-moz-placeholder, textarea::-moz-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
+#tailwind input::-moz-placeholder, #tailwind textarea::-moz-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
 }
 
-input::placeholder,
-textarea::placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
+#tailwind input::placeholder,
+#tailwind textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
 }
 
 /*
 Set the default cursor for buttons.
 */
 
-button,
-[role="button"] {
+#tailwind button,
+#tailwind [role="button"] {
   cursor: pointer;
 }
 
 /*
 Make sure disabled buttons don't get the pointer cursor.
 */
-
-:disabled {
+#tailwind :disabled {
   cursor: default;
 }
 
@@ -392,37 +350,34 @@ Make sure disabled buttons don't get the pointer cursor.
    This can trigger a poorly considered lint error in some tools but is included by design.
 */
 
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  display: block;
-  /* 1 */
-  vertical-align: middle;
-  /* 2 */
+#tailwind img,
+#tailwind svg,
+#tailwind video,
+#tailwind canvas,
+#tailwind audio,
+#tailwind iframe,
+#tailwind embed,
+#tailwind object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
 }
 
 /*
 Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
 */
 
-img,
-video {
+#tailwind img,
+#tailwind video {
   max-width: 100%;
   height: auto;
 }
 
 /* Make elements with the HTML hidden attribute stay hidden by default */
-
-[hidden] {
+#tailwind [hidden] {
   display: none;
 }
 
-[type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
+#tailwind [type='text'],#tailwind [type='email'],#tailwind [type='url'],#tailwind [type='password'],#tailwind [type='number'],#tailwind [type='date'],#tailwind [type='datetime-local'],#tailwind [type='month'],#tailwind [type='search'],#tailwind [type='tel'],#tailwind [type='time'],#tailwind [type='week'],#tailwind [multiple],#tailwind textarea,#tailwind select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -439,7 +394,7 @@ video {
   --tw-shadow: 0 0 #0000;
 }
 
-[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {
+#tailwind [type='text']:focus, #tailwind [type='email']:focus, #tailwind [type='url']:focus, #tailwind [type='password']:focus, #tailwind [type='number']:focus, #tailwind [type='date']:focus, #tailwind [type='datetime-local']:focus, #tailwind [type='month']:focus, #tailwind [type='search']:focus, #tailwind [type='tel']:focus, #tailwind [type='time']:focus, #tailwind [type='week']:focus, #tailwind [multiple]:focus, #tailwind textarea:focus, #tailwind select:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
@@ -452,30 +407,30 @@ video {
   border-color: #2563eb;
 }
 
-input::-moz-placeholder, textarea::-moz-placeholder {
+#tailwind input::-moz-placeholder, #tailwind textarea::-moz-placeholder {
   color: #6b7280;
   opacity: 1;
 }
 
-input::placeholder,textarea::placeholder {
+#tailwind input::placeholder,#tailwind textarea::placeholder {
   color: #6b7280;
   opacity: 1;
 }
 
-::-webkit-datetime-edit-fields-wrapper {
+#tailwind ::-webkit-datetime-edit-fields-wrapper {
   padding: 0;
 }
 
-::-webkit-date-and-time-value {
+#tailwind ::-webkit-date-and-time-value {
   min-height: 1.5em;
 }
 
-::-webkit-datetime-edit,::-webkit-datetime-edit-year-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute-field,::-webkit-datetime-edit-second-field,::-webkit-datetime-edit-millisecond-field,::-webkit-datetime-edit-meridiem-field {
+#tailwind ::-webkit-datetime-edit,#tailwind ::-webkit-datetime-edit-year-field,#tailwind ::-webkit-datetime-edit-month-field,#tailwind ::-webkit-datetime-edit-day-field,#tailwind ::-webkit-datetime-edit-hour-field,#tailwind ::-webkit-datetime-edit-minute-field,#tailwind ::-webkit-datetime-edit-second-field,#tailwind ::-webkit-datetime-edit-millisecond-field,#tailwind ::-webkit-datetime-edit-meridiem-field {
   padding-top: 0;
   padding-bottom: 0;
 }
 
-select {
+#tailwind select {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
   background-position: right 0.5rem center;
   background-repeat: no-repeat;
@@ -485,7 +440,7 @@ select {
           print-color-adjust: exact;
 }
 
-[multiple] {
+#tailwind [multiple] {
   background-image: initial;
   background-position: initial;
   background-repeat: unset;
@@ -495,7 +450,7 @@ select {
           print-color-adjust: unset;
 }
 
-[type='checkbox'],[type='radio'] {
+#tailwind [type='checkbox'],#tailwind [type='radio'] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -518,15 +473,15 @@ select {
   --tw-shadow: 0 0 #0000;
 }
 
-[type='checkbox'] {
+#tailwind [type='checkbox'] {
   border-radius: 0px;
 }
 
-[type='radio'] {
+#tailwind [type='radio'] {
   border-radius: 100%;
 }
 
-[type='checkbox']:focus,[type='radio']:focus {
+#tailwind [type='checkbox']:focus,#tailwind [type='radio']:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
@@ -538,7 +493,7 @@ select {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
 }
 
-[type='checkbox']:checked,[type='radio']:checked {
+#tailwind [type='checkbox']:checked,#tailwind [type='radio']:checked {
   border-color: transparent;
   background-color: currentColor;
   background-size: 100% 100%;
@@ -546,20 +501,20 @@ select {
   background-repeat: no-repeat;
 }
 
-[type='checkbox']:checked {
+#tailwind [type='checkbox']:checked {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
 }
 
-[type='radio']:checked {
+#tailwind [type='radio']:checked {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
 }
 
-[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus {
+#tailwind [type='checkbox']:checked:hover,#tailwind [type='checkbox']:checked:focus,#tailwind [type='radio']:checked:hover,#tailwind [type='radio']:checked:focus {
   border-color: transparent;
   background-color: currentColor;
 }
 
-[type='checkbox']:indeterminate {
+#tailwind [type='checkbox']:indeterminate {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");
   border-color: transparent;
   background-color: currentColor;
@@ -568,12 +523,12 @@ select {
   background-repeat: no-repeat;
 }
 
-[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus {
+#tailwind [type='checkbox']:indeterminate:hover,#tailwind [type='checkbox']:indeterminate:focus {
   border-color: transparent;
   background-color: currentColor;
 }
 
-[type='file'] {
+#tailwind [type='file'] {
   background: unset;
   border-color: inherit;
   border-width: 0;
@@ -583,12 +538,12 @@ select {
   line-height: inherit;
 }
 
-[type='file']:focus {
+#tailwind [type='file']:focus {
   outline: 1px solid ButtonText;
   outline: 1px auto -webkit-focus-ring-color;
 }
 
-*, ::before, ::after {
+#tailwind *, #tailwind ::before, #tailwind ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -638,7 +593,7 @@ select {
   --tw-backdrop-sepia:  ;
 }
 
-::backdrop {
+#tailwind ::backdrop {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -687,8 +642,7 @@ select {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-
-.sr-only {
+#tailwind .tw-sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -699,656 +653,711 @@ select {
   white-space: nowrap;
   border-width: 0;
 }
-
-.fixed {
+#tailwind .tw-fixed {
   position: fixed;
 }
-
-.absolute {
+#tailwind .tw-absolute {
   position: absolute;
 }
-
-.relative {
+#tailwind .tw-relative {
   position: relative;
 }
-
-.inset-0 {
+#tailwind .tw-sticky {
+  position: sticky;
+}
+#tailwind .tw-inset-0 {
   inset: 0px;
 }
-
-.bottom-0 {
+#tailwind .tw-inset-x-0 {
+  left: 0px;
+  right: 0px;
+}
+#tailwind .tw-bottom-0 {
   bottom: 0px;
 }
-
-.left-0 {
+#tailwind .tw-left-0 {
   left: 0px;
 }
-
-.right-4 {
+#tailwind .tw-right-4 {
   right: 1rem;
 }
-
-.right-6 {
+#tailwind .tw-right-6 {
   right: 1.5rem;
 }
-
-.top-0 {
+#tailwind .tw-top-0 {
   top: 0px;
 }
-
-.top-1 {
+#tailwind .tw-top-1 {
   top: 0.25rem;
 }
-
-.top-6 {
+#tailwind .tw-top-6 {
   top: 1.5rem;
 }
-
-.z-10 {
+#tailwind .tw-isolate {
+  isolation: isolate;
+}
+#tailwind .tw-z-10 {
   z-index: 10;
 }
-
-.z-50 {
-  z-index: 50;
+#tailwind .tw-z-\[99999\] {
+  z-index: 99999;
 }
-
-.m-4 {
+#tailwind .tw-m-4 {
   margin: 1rem;
 }
-
-.mx-4 {
+#tailwind .tw-m-\[2px\] {
+  margin: 2px;
+}
+#tailwind .tw-mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
 }
-
-.mx-auto {
+#tailwind .tw-mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
-
-.my-auto {
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.mb-3 {
+#tailwind .tw-mb-3 {
   margin-bottom: 0.75rem;
 }
-
-.mb-4 {
+#tailwind .tw-mb-4 {
   margin-bottom: 1rem;
 }
-
-.mb-6 {
+#tailwind .tw-mb-6 {
   margin-bottom: 1.5rem;
 }
-
-.ml-2 {
+#tailwind .tw-ml-2 {
   margin-left: 0.5rem;
 }
-
-.mr-2 {
-  margin-right: 0.5rem;
+#tailwind .tw-ml-4 {
+  margin-left: 1rem;
 }
-
-.mt-2 {
+#tailwind .tw-mt-10 {
+  margin-top: 2.5rem;
+}
+#tailwind .tw-mt-2 {
   margin-top: 0.5rem;
 }
-
-.mt-2\.5 {
+#tailwind .tw-mt-2\.5 {
   margin-top: 0.625rem;
 }
-
-.mt-6 {
+#tailwind .tw-mt-4 {
+  margin-top: 1rem;
+}
+#tailwind .tw-mt-6 {
   margin-top: 1.5rem;
 }
-
-.mt-8 {
+#tailwind .tw-mt-8 {
   margin-top: 2rem;
 }
-
-.block {
+#tailwind .tw-block {
   display: block;
 }
-
-.inline-block {
+#tailwind .tw-inline-block {
   display: inline-block;
 }
-
-.flex {
+#tailwind .tw-flex {
   display: flex;
 }
-
-.inline-flex {
+#tailwind .tw-inline-flex {
   display: inline-flex;
 }
-
-.grid {
+#tailwind .tw-grid {
   display: grid;
 }
-
-.hidden {
-  display: none;
-}
-
-.aspect-\[1\/0\.8\] {
+#tailwind .tw-aspect-\[1\/0\.8\] {
   aspect-ratio: 1/0.8;
 }
-
-.aspect-square {
+#tailwind .tw-aspect-square {
   aspect-ratio: 1 / 1;
 }
-
-.aspect-video {
+#tailwind .tw-aspect-video {
   aspect-ratio: 16 / 9;
 }
-
-.h-5 {
+#tailwind .tw-h-5 {
   height: 1.25rem;
 }
-
-.h-7 {
+#tailwind .tw-h-7 {
   height: 1.75rem;
 }
-
-.h-full {
+#tailwind .tw-h-8 {
+  height: 2rem;
+}
+#tailwind .tw-h-full {
   height: 100%;
 }
-
-.max-h-96 {
+#tailwind .tw-max-h-96 {
   max-height: 24rem;
 }
-
-.w-5 {
+#tailwind .tw-w-5 {
   width: 1.25rem;
 }
-
-.w-7 {
+#tailwind .tw-w-7 {
   width: 1.75rem;
 }
-
-.w-full {
+#tailwind .tw-w-8 {
+  width: 2rem;
+}
+#tailwind .tw-w-full {
   width: 100%;
 }
-
-.max-w-3xl {
+#tailwind .tw-max-w-3xl {
   max-width: 48rem;
 }
-
-.max-w-4xl {
+#tailwind .tw-max-w-4xl {
   max-width: 56rem;
 }
-
-.max-w-md {
+#tailwind .tw-max-w-md {
   max-width: 28rem;
 }
-
-.flex-1 {
+#tailwind .tw-max-w-2xl {
+  max-width: 42rem;
+}
+#tailwind .tw-max-w-xl {
+  max-width: 36rem;
+}
+#tailwind .tw-max-w-sm {
+  max-width: 24rem;
+}
+#tailwind .tw-flex-1 {
   flex: 1 1 0%;
 }
-
-.flex-shrink-0 {
+#tailwind .tw-flex-shrink-0 {
   flex-shrink: 0;
 }
-
-.flex-grow {
+#tailwind .tw-flex-grow {
   flex-grow: 1;
 }
-
-.cursor-not-allowed {
+#tailwind .tw-cursor-not-allowed {
   cursor: not-allowed;
 }
-
-.cursor-pointer {
+#tailwind .tw-cursor-pointer {
   cursor: pointer;
 }
-
-.grid-cols-1 {
+#tailwind .tw-grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
-
-.grid-cols-2 {
+#tailwind .tw-grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-
-.flex-col {
+#tailwind .tw-grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+#tailwind .tw-flex-col {
   flex-direction: column;
 }
-
-.items-center {
+#tailwind .tw-items-center {
   align-items: center;
 }
-
-.justify-start {
+#tailwind .tw-justify-start {
   justify-content: flex-start;
 }
-
-.justify-center {
+#tailwind .tw-justify-center {
   justify-content: center;
 }
-
-.justify-between {
+#tailwind .tw-justify-between {
   justify-content: space-between;
 }
-
-.gap-4 {
+#tailwind .tw-gap-4 {
   gap: 1rem;
 }
-
-.gap-x-8 {
+#tailwind .tw-gap-x-8 {
   -moz-column-gap: 2rem;
        column-gap: 2rem;
 }
-
-.gap-y-4 {
+#tailwind .tw-gap-y-4 {
   row-gap: 1rem;
 }
-
-.truncate {
+#tailwind .tw-space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+#tailwind .tw-truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
-.rounded-full {
+#tailwind .tw-rounded-full {
   border-radius: 9999px;
 }
-
-.border {
+#tailwind .tw-border {
   border-width: 1px;
 }
-
-.border-0 {
+#tailwind .tw-border-0 {
   border-width: 0px;
 }
-
-.border-b-0 {
+#tailwind .tw-border-2 {
+  border-width: 2px;
+}
+#tailwind .tw-border-b-0 {
   border-bottom-width: 0px;
 }
-
-.border-t-0 {
+#tailwind .tw-border-t-0 {
   border-top-width: 0px;
 }
-
-.border-\[\#464669\] {
+#tailwind .tw-border-\[\#464669\] {
   --tw-border-opacity: 1;
   border-color: rgb(70 70 105 / var(--tw-border-opacity));
 }
-
-.border-gray-300 {
+#tailwind .tw-border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
-
-.border-white\/50 {
+#tailwind .tw-border-indigo-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(79 70 229 / var(--tw-border-opacity));
+}
+#tailwind .tw-border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+#tailwind .tw-border-white\/50 {
   border-color: rgb(255 255 255 / 0.5);
 }
-
-.bg-\[\#464669\] {
+#tailwind .tw-border-white\/30 {
+  border-color: rgb(255 255 255 / 0.3);
+}
+#tailwind .tw-border-transparent {
+  border-color: transparent;
+}
+#tailwind .tw-border-gray-100 {
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity));
+}
+#tailwind .tw-border-\[\#4B4B89\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(75 75 137 / var(--tw-border-opacity));
+}
+#tailwind .tw-border-gray-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
+}
+#tailwind .tw-border-gray-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+#tailwind .tw-border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+#tailwind .tw-border-opacity-100 {
+  --tw-border-opacity: 1;
+}
+#tailwind .tw-border-opacity-20 {
+  --tw-border-opacity: 0.2;
+}
+#tailwind .tw-border-opacity-40 {
+  --tw-border-opacity: 0.4;
+}
+#tailwind .tw-border-opacity-80 {
+  --tw-border-opacity: 0.8;
+}
+#tailwind .tw-bg-\[\#464669\] {
   --tw-bg-opacity: 1;
   background-color: rgb(70 70 105 / var(--tw-bg-opacity));
 }
-
-.bg-black {
+#tailwind .tw-bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
-
-.bg-gray-50 {
+#tailwind .tw-bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
-
-.bg-white {
+#tailwind .tw-bg-indigo-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+}
+#tailwind .tw-bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-
-.bg-opacity-100 {
+#tailwind .tw-bg-white\/50 {
+  background-color: rgb(255 255 255 / 0.5);
+}
+#tailwind .tw-bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+#tailwind .tw-bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+#tailwind .tw-bg-opacity-100 {
   --tw-bg-opacity: 1;
 }
-
-.bg-opacity-50 {
+#tailwind .tw-bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
-
-.bg-opacity-80 {
+#tailwind .tw-bg-opacity-80 {
   --tw-bg-opacity: 0.8;
 }
-
-.object-contain {
+#tailwind .tw-object-contain {
   -o-object-fit: contain;
      object-fit: contain;
 }
-
-.object-cover {
+#tailwind .tw-object-cover {
   -o-object-fit: cover;
      object-fit: cover;
 }
-
-.p-1 {
+#tailwind .tw-p-1 {
   padding: 0.25rem;
 }
-
-.p-4 {
+#tailwind .tw-p-4 {
   padding: 1rem;
 }
-
-.p-6 {
+#tailwind .tw-p-6 {
   padding: 1.5rem;
 }
-
-.px-3 {
+#tailwind .tw-p-2 {
+  padding: 0.5rem;
+}
+#tailwind .tw-p-8 {
+  padding: 2rem;
+}
+#tailwind .tw-p-\[2px\] {
+  padding: 2px;
+}
+#tailwind .tw-px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
-
-.px-3\.5 {
+#tailwind .tw-px-3\.5 {
   padding-left: 0.875rem;
   padding-right: 0.875rem;
 }
-
-.px-4 {
+#tailwind .tw-px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-
-.py-2 {
+#tailwind .tw-py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-
-.py-3 {
+#tailwind .tw-py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
-
-.py-8 {
+#tailwind .tw-py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-
-.pb-3 {
+#tailwind .tw-px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+#tailwind .tw-pb-3 {
   padding-bottom: 0.75rem;
 }
-
-.pt-8 {
+#tailwind .tw-pr-4 {
+  padding-right: 1rem;
+}
+#tailwind .tw-pt-8 {
   padding-top: 2rem;
 }
-
-.text-left {
+#tailwind .tw-pr-2 {
+  padding-right: 0.5rem;
+}
+#tailwind .tw-text-left {
   text-align: left;
 }
-
-.text-center {
+#tailwind .tw-text-center {
   text-align: center;
 }
-
-.text-right {
+#tailwind .tw-text-right {
   text-align: right;
 }
-
-.font-serif {
+#tailwind .tw-font-serif {
   font-family: Frank Ruhl Libre, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
-
-.text-lg {
+#tailwind .tw-text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
-
-.text-sm {
+#tailwind .tw-text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-
-.text-xl {
+#tailwind .tw-text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-
-.font-medium {
+#tailwind .tw-font-bold {
+  font-weight: 700;
+}
+#tailwind .tw-font-medium {
   font-weight: 500;
 }
-
-.leading-6 {
+#tailwind .tw-leading-6 {
   line-height: 1.5rem;
 }
-
-.text-\[\#464669\] {
+#tailwind .tw-text-\[\#464669\] {
   --tw-text-opacity: 1;
   color: rgb(70 70 105 / var(--tw-text-opacity));
 }
-
-.text-gray-800 {
+#tailwind .tw-text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
-
-.text-gray-900 {
+#tailwind .tw-text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
-
-.text-white {
+#tailwind .tw-text-indigo-600 {
+  --tw-text-opacity: 1;
+  color: rgb(79 70 229 / var(--tw-text-opacity));
+}
+#tailwind .tw-text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-
-.opacity-0 {
+#tailwind .tw-text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+#tailwind .tw-opacity-0 {
   opacity: 0;
 }
-
-.opacity-10 {
+#tailwind .tw-opacity-10 {
   opacity: 0.1;
 }
-
-.opacity-100 {
+#tailwind .tw-opacity-100 {
   opacity: 1;
 }
-
-.opacity-5 {
+#tailwind .tw-opacity-5 {
   opacity: 0.05;
 }
-
-.opacity-70 {
+#tailwind .tw-opacity-70 {
   opacity: 0.7;
 }
-
-.opacity-80 {
+#tailwind .tw-opacity-80 {
   opacity: 0.8;
 }
-
-.shadow-lg {
+#tailwind .tw-opacity-20 {
+  opacity: 0.2;
+}
+#tailwind .tw-opacity-40 {
+  opacity: 0.4;
+}
+#tailwind .tw-shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-
-.ring {
+#tailwind .tw-outline {
+  outline-style: solid;
+}
+#tailwind .tw-outline-2 {
+  outline-width: 2px;
+}
+#tailwind .tw-outline-\[\#4B4B89\] {
+  outline-color: #4B4B89;
+}
+#tailwind .tw-outline-transparent {
+  outline-color: transparent;
+}
+#tailwind .tw-ring {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
-
-.ring-1 {
+#tailwind .tw-ring-1 {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
-
-.ring-inset {
+#tailwind .tw-ring-inset {
   --tw-ring-inset: inset;
 }
-
-.ring-gray-300 {
+#tailwind .tw-ring-gray-300 {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));
 }
-
-.transition {
+#tailwind .tw-transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-
-.duration-150 {
+#tailwind .tw-duration-150 {
   transition-duration: 150ms;
 }
-
-.ease-in {
+#tailwind .tw-ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
-
-.ease-out {
+#tailwind .tw-ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
-
-.placeholder\:text-gray-400::-moz-placeholder {
+#tailwind [x-cloak] {
+  display: none !important;
+}
+#tailwind .placeholder\:tw-text-gray-400::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
-
-.placeholder\:text-gray-400::placeholder {
+#tailwind .placeholder\:tw-text-gray-400::placeholder {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
-
-.hover\:bg-\[\#4B4B89\]:hover {
+#tailwind .hover\:tw-border-gray-400:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+#tailwind .hover\:tw-border-white\/70:hover {
+  border-color: rgb(255 255 255 / 0.7);
+}
+#tailwind .hover\:tw-border-white\/50:hover {
+  border-color: rgb(255 255 255 / 0.5);
+}
+#tailwind .hover\:tw-bg-\[\#4B4B89\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(75 75 137 / var(--tw-bg-opacity));
 }
-
-.hover\:bg-gray-50:hover {
+#tailwind .hover\:tw-bg-gray-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
-
-.hover\:text-gray-900:hover {
+#tailwind .hover\:tw-bg-indigo-900:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(49 46 129 / var(--tw-bg-opacity));
+}
+#tailwind .hover\:tw-text-gray-900:hover {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
-
-.focus\:outline-none:focus {
+#tailwind .focus\:tw-outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-
-.focus\:ring-2:focus {
+#tailwind .focus\:tw-ring-2:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
-
-.focus\:ring-inset:focus {
+#tailwind .focus\:tw-ring-inset:focus {
   --tw-ring-inset: inset;
 }
-
-.focus\:ring-\[\#464669\]:focus {
+#tailwind .focus\:tw-ring-\[\#464669\]:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(70 70 105 / var(--tw-ring-opacity));
 }
-
-.group:hover .group-hover\:bg-\[\#4B4B89\] {
+#tailwind .tw-group:hover .group-hover\:tw-bg-\[\#4B4B89\] {
   --tw-bg-opacity: 1;
   background-color: rgb(75 75 137 / var(--tw-bg-opacity));
 }
-
-.group:hover .group-hover\:bg-opacity-100 {
+#tailwind .tw-group:hover .group-hover\:tw-bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+#tailwind .tw-group:hover .group-hover\:tw-bg-opacity-100 {
   --tw-bg-opacity: 1;
 }
-
-.group:hover .group-hover\:opacity-100 {
+#tailwind .tw-group:hover .group-hover\:tw-opacity-100 {
   opacity: 1;
 }
-
 @media (min-width: 640px) {
-  .sm\:grid-cols-3 {
+
+  #tailwind .sm\:tw-grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .sm\:border-gray-300 {
+  #tailwind .sm\:tw-grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #tailwind .sm\:tw-border-gray-300 {
     --tw-border-opacity: 1;
     border-color: rgb(209 213 219 / var(--tw-border-opacity));
   }
 
-  .sm\:px-6 {
+  #tailwind .sm\:tw-px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 
-  .sm\:text-sm {
+  #tailwind .sm\:tw-pr-10 {
+    padding-right: 2.5rem;
+  }
+
+  #tailwind .sm\:tw-pr-4 {
+    padding-right: 1rem;
+  }
+
+  #tailwind .sm\:tw-text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
 
-  .sm\:leading-6 {
+  #tailwind .sm\:tw-leading-6 {
     line-height: 1.5rem;
   }
 }
-
 @media (min-width: 1024px) {
-  .lg\:right-6 {
+
+  #tailwind .lg\:tw-right-6 {
     right: 1.5rem;
   }
 
-  .lg\:top-3 {
+  #tailwind .lg\:tw-top-3 {
     top: 0.75rem;
   }
 
-  .lg\:mb-0 {
+  #tailwind .lg\:tw-mb-0 {
     margin-bottom: 0px;
   }
 
-  .lg\:grid {
+  #tailwind .lg\:tw-grid {
     display: grid;
   }
 
-  .lg\:max-h-none {
-    max-height: none;
+  #tailwind .lg\:tw-h-\[384px\] {
+    height: 384px;
   }
 
-  .lg\:max-w-7xl {
+  #tailwind .lg\:tw-max-w-7xl {
     max-width: 80rem;
   }
 
-  .lg\:grid-cols-2 {
+  #tailwind .lg\:tw-grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .lg\:border {
+  #tailwind .lg\:tw-grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #tailwind .lg\:tw-border {
     border-width: 1px;
   }
 
-  .lg\:border-l {
+  #tailwind .lg\:tw-border-l {
     border-left-width: 1px;
   }
 
-  .lg\:border-none {
+  #tailwind .lg\:tw-border-none {
     border-style: none;
   }
 
-  .lg\:border-gray-300 {
+  #tailwind .lg\:tw-border-gray-300 {
     --tw-border-opacity: 1;
     border-color: rgb(209 213 219 / var(--tw-border-opacity));
   }
 
-  .lg\:p-4 {
+  #tailwind .lg\:tw-p-4 {
     padding: 1rem;
   }
 
-  .lg\:px-8 {
+  #tailwind .lg\:tw-px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 
-  .lg\:pt-12 {
+  #tailwind .lg\:tw-pt-12 {
     padding-top: 3rem;
   }
 
-  .lg\:text-xl {
+  #tailwind .lg\:tw-text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
