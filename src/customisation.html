@@ -17,7 +17,7 @@
     <div
       x-data="{
         dataCurrentAccordion: -2,
-        dataUserSelection: { type: '', gem: '' },
+        dataUserSelection: { type: '' },
         dataCurrentPreviewImage: '',
         dataCurrentPlayingVideo: '',
 
@@ -27,7 +27,6 @@
         showVideoModal(videoUrl) {
           this.dataCurrentPlayingVideo = videoUrl;
           this.isVideoModalOpen = true;
-          console.log(this.dataCurrentPlayingVideo, this.isVideoModalOpen)
         },
         hideVideoModal() {
           this.isVideoModalOpen = false;
@@ -86,7 +85,7 @@
               <div x-show.transition.duration.150="dataCurrentAccordion === -2" class="p-4 border border-t-0 border-gray-300 bg-white">
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   <label class="relative cursor-pointer group">
-                    <input type="radio" x-model="dataUserSelection['type']" id="type-ring" value="ring" class="sr-only" @click="if(dataUserSelection['type'] !== 'ring') dataUserSelection = { type: 'ring' }" />
+                    <input type="radio" x-model="dataUserSelection['type']" id="type-ring" value="ring" class="sr-only" @click="if(dataUserSelection['type'] !== 'ring') dataUserSelection = { type: 'ring', gem: '' }" />
                     <img src="assets/img/customisation/ring.jpg" class="w-full aspect-square object-cover border" :class="{ 'border-[#464669]': dataUserSelection['type'] === 'ring', 'border-gray-300': dataUserSelection['type'] !== 'ring' }" />
                     <div x-show="dataUserSelection['type'] === 'ring'" class="absolute top-0 left-0 w-full h-full bg-[#464669] opacity-10"></div>
                     <span class="absolute bottom-0 left-0 w-full p-1 text-center text-sm group-hover:bg-opacity-100 text-white bg-[#464669] transition" :class="{ 'bg-opacity-100': dataUserSelection['type'] === 'ring', 'bg-opacity-80': dataUserSelection['type'] !== 'ring' }">Ring</span>
@@ -130,14 +129,14 @@
               <div x-show.transition.duration.150="dataCurrentAccordion === -1" class="p-4 border border-t-0 border-gray-300 bg-white">
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   <label class="relative cursor-pointer group">
-                    <input type="radio" x-model="dataUserSelection['gem']" id="gem-diamond" value="diamond" class="sr-only" @click="dataUserSelection = {type: 'ring', gem: 'diamond'}" />
+                    <input type="radio" x-model="dataUserSelection['gem']" id="gem-diamond" value="diamond" class="sr-only" @click="if(dataUserSelection['gem'] !== 'diamond') dataUserSelection = {type: 'ring', gem: 'diamond'}" />
                     <img src="assets/img/customisation/ring/diamond.jpg" class="w-full aspect-square object-cover border" :class="{ 'border-[#464669]': dataUserSelection['gem'] === 'diamond', 'border-gray-300': dataUserSelection['gem'] !== 'diamond' }" />
                     <div x-show="dataUserSelection['gem'] === 'diamond'" class="absolute top-0 left-0 w-full h-full bg-[#464669] opacity-10"></div>
                     <span class="absolute bottom-0 left-0 w-full p-1 text-center text-sm group-hover:bg-opacity-100 text-white bg-[#464669] transition" :class="{ 'bg-opacity-100': dataUserSelection['gem'] === 'diamond', 'bg-opacity-80': dataUserSelection['gem'] !== 'diamond' }">Diamond</span>
                   </label>
 
                   <label class="relative cursor-pointer group">
-                    <input type="radio" x-model="dataUserSelection['gem']" id="gem-colored" value="colored-stones" class="sr-only" @click="dataUserSelection = {type: 'ring', gem: 'colored-stones'}" />
+                    <input type="radio" x-model="dataUserSelection['gem']" id="gem-colored" value="colored-stones" class="sr-only" @click="if(dataUserSelection['gem'] !== 'colored-stones') dataUserSelection = {type: 'ring', gem: 'colored-stones'}" />
                     <img src="assets/img/customisation/ring/colored_stones.jpg" class="w-full aspect-square object-cover border" :class="{ 'border-[#464669]': dataUserSelection['gem'] === 'colored-stones', 'border-gray-300': dataUserSelection['gem'] !== 'colored-stones' }" />
                     <div x-show="dataUserSelection['gem'] === 'colored-stones'" class="absolute top-0 left-0 w-full h-full bg-[#464669] opacity-10"></div>
                     <span class="absolute bottom-0 left-0 w-full p-1 text-center text-sm group-hover:bg-opacity-100 text-white bg-[#464669] transition" :class="{ 'bg-opacity-100': dataUserSelection['gem'] === 'colored-stones', 'bg-opacity-80': dataUserSelection['gem'] !== 'colored-stones' }">Colored Stones</span>
