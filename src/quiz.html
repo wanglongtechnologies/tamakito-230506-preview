@@ -1,0 +1,512 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.3.3/dist/cdn.min.js"
+      defer
+    ></script>
+    <title>Quiz | TAMAKITO Jewellery</title>
+  </head>
+  <body>
+    <script>
+      const questionnaire = () => ({
+        steps: [
+          {
+            id: 1,
+            title: "What are we celebrating?",
+            options: [
+              {
+                id: "1A",
+                name: "I want to pop the question",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images-Q1-I-want-to-pop-the-question-v1-1000px-X-800px.jpg",
+              },
+              {
+                id: "1B",
+                name: "I'm celebrating ME",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images-Q1-Im-Celebrating-Me-v2-1000px-X800px.jpg",
+              },
+              {
+                id: "1C",
+                name: "It's a surprise present (Shhh)",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images-Q1-Its-A-Surprise-v1-1000px-X-800px.jpg",
+              },
+              {
+                id: "1D",
+                name: "I just love jewellery",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images-Q1-I-just-love-jewellery-v1-1000px-X-800px.jpg",
+              },
+              {
+                id: "1E",
+                name: "intend to make a statement",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images-Q1-Intend-To-Make-v1-1000px-X-800px.jpg",
+              },
+            ],
+          },
+          {
+            id: 2,
+            title: "That’s awesome! What would be your type of ‘Bling’?",
+            options: [
+              {
+                id: "2A",
+                name: "Ring",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images_Q2-Ring-v2-1000px-X-800px.jpg",
+              },
+              {
+                id: "2B",
+                name: "Earrings",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images_Q2-Earrings-1000px-X-800px.jpg",
+              },
+              {
+                id: "2C",
+                name: "Pendant",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images_Q2-Pendant-1000px-X-800px.jpg",
+              },
+              {
+                id: "2D",
+                name: "Bracelet",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images_Q2-Bracelet-1000px-X-800px.jpg",
+              },
+              {
+                id: "2E",
+                name: "Necklace",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images_Q2-Pendant-v2-1000px-X-800px.jpg",
+              },
+            ],
+          },
+          {
+            id: 3,
+            title: "Will you wear it often?",
+            options: [
+              {
+                id: "3A",
+                name: "Just casually",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images_Q3-Casually-v2-1000px-X-800px.jpg",
+              },
+              {
+                id: "3B",
+                name: "Every single day",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images_Q3-Everyday-1000px-X-800px.jpg",
+              },
+              {
+                id: "3C",
+                name: "Only for that special occasion",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images_Q3-Special-Day-v21000px-X-800px.jpg",
+              },
+            ],
+          },
+          {
+            id: 4,
+            title: "Which of these is more you?",
+            options: [
+              {
+                id: "4A",
+                name: "I want only the best of the best",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images_Q4-Best-1000px-X-800px.jpg",
+              },
+              {
+                id: "4B",
+                name: "I am all about value",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images_Q4-Value-1000px-X-800px.jpg",
+              },
+              {
+                id: "4C",
+                name: "want to make a statement",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images_Q4-Statement-1000px-X-800px.jpg",
+              },
+              {
+                id: "4D",
+                name: "I am open to suggestions",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images_Q4-Suggestion-1000px-X-800px.jpg",
+              },
+            ],
+          },
+          {
+            id: 5,
+            title: "How else would you describe yourself?",
+            options: [
+              {
+                id: "5A",
+                name: "Simple",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/09/Quiz-Images_Q5-Simple.jpg",
+              },
+              {
+                id: "5B",
+                name: "Fancy",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images_Q5-Fancy-1000px-X-800px.jpg",
+              },
+              {
+                id: "5C",
+                name: "Modern",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images_Q5-Modern-1000px-X-800px.jpg",
+              },
+              {
+                id: "5D",
+                name: "Classic",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Quiz-Images_Q5-Classic-1000px-X-800px.jpg",
+              },
+            ],
+          },
+          {
+            id: 6,
+            title: "Let's talk about gems. What are you mining for?",
+            options: [
+              {
+                id: "6A",
+                name: "Coloured Stones",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/Stone-Colour-Peach-300px-X-300px.jpg",
+              },
+              {
+                id: "6B",
+                name: "Diamond",
+                imageSrc:
+                  "https://tamakito.com/wp-content/uploads/2019/08/diamonds.png",
+              },
+            ],
+          },
+          {
+            id: 7,
+            title:
+              "Alright, we’ve now got a good guesstimate of your style! All we need is an indication of your willingness to splurge for this piece :)",
+            options: [
+              {
+                id: "7A",
+                name: "RM 2k - 7k",
+              },
+              {
+                id: "7B",
+                name: "RM 8k - 20k",
+              },
+              {
+                id: "7C",
+                name: "RM 20k - 60k",
+              },
+              {
+                id: "7D",
+                name: "RM 70k and above",
+              },
+            ],
+          },
+          {
+            id: 8,
+            title:
+              "Based on your selections, we find the following suitable for your occasion. Select one that you like most.",
+            options: [
+              {
+                id: "8A",
+                name: "Option 1",
+                imageSrc: "path/to/image-2A.jpg",
+              },
+              {
+                id: "8B",
+                name: "Option 2",
+                imageSrc: "path/to/image-2B.jpg",
+              },
+              {
+                id: "8C",
+                name: "Option 3",
+                imageSrc: "path/to/image-2C.jpg",
+              },
+              {
+                id: "8D",
+                name: "Option 4",
+                imageSrc: "path/to/image-2C.jpg",
+              },
+            ],
+          },
+        ],
+        currentStep: 0,
+        maxStep: 0,
+        dataUserSelection: {},
+        formData: {
+          name: "",
+          phone: "",
+          email: "",
+        },
+        isSubmitModalOpen: false,
+        isStepClickable(index) {
+          return (
+            index === this.currentStep ||
+            (index < this.steps.length - 1 && this.isStepCompleted(index)) ||
+            index <= this.maxStep
+          );
+        },
+        isStepCompleted(index) {
+          return this.dataUserSelection[this.steps[index].id] !== undefined;
+        },
+        isAllPreviousStepsCompleted(index) {
+          for (let i = 0; i < index; i++) {
+            if (!this.isStepCompleted(i)) {
+              return false;
+            }
+          }
+          return true;
+        },
+        stepClasses(index) {
+          if (this.currentStep === index) {
+            return "tw-border-2 tw-text-white tw-border-white tw-bg-[#464669]";
+          } else if (this.isStepCompleted(index)) {
+            return "tw-bg-white tw-text-[#464669]";
+          } else {
+            return "tw-border-2 tw-border-white/30 tw-bg-[#464669] tw-text-white hover:tw-border-white/50";
+          }
+        },
+        selectOption(stepIndex, optionId) {
+          const previouslySelected =
+            this.dataUserSelection[this.steps[stepIndex].id];
+          this.dataUserSelection[this.steps[stepIndex].id] = optionId;
+
+          // If it's not the last step, move to the next step
+          if (
+            stepIndex < this.steps.length - 1 ||
+            previouslySelected !== optionId
+          ) {
+            this.currentStep = stepIndex + 1;
+            this.maxStep = Math.max(this.maxStep, this.currentStep);
+          } else if (this.isAllPreviousStepsCompleted(stepIndex)) {
+            this.isSubmitModalOpen = true;
+          }
+        },
+        submitForm() {
+          // Handle form submission, e.g., send data to an API
+          console.log("Form data:", this.formData);
+          console.log("User selections:", this.dataUserSelection);
+
+          // Close the modal
+          this.isSubmitModalOpen = false;
+        },
+      });
+    </script>
+
+    <div id="tailwind">
+      <div
+        class="tw-max-w-3xl tw-px-4 tw-py-8 tw-mx-auto lg:tw-max-w-7xl sm:tw-px-6 lg:tw-px-8 tw-isolate"
+      >
+        <div
+          x-data="questionnaire()"
+          class="tw-border tw-shadow-lg tw-border-gray-300"
+        >
+          <!-- Progress bar -->
+          <nav aria-label="Progress">
+            <ol
+              role="list"
+              class="tw-flex tw-items-center tw-justify-center tw-bg-[#464669] tw-px-2 tw-py-3"
+            >
+              <template x-for="(step, index) in steps">
+                <li
+                  class="tw-relative"
+                  :class="{ 'tw-pr-2 sm:tw-pr-4': index !== steps.length - 1, 'tw-cursor-pointer': isStepClickable(index) }"
+                  @click="isStepClickable(index) && (currentStep = index)"
+                >
+                  <div
+                    class="tw-absolute tw-inset-0 tw-flex tw-items-center"
+                    aria-hidden="true"
+                  ></div>
+                  <a
+                    href="#"
+                    class="tw-relative tw-flex tw-h-8 tw-w-8 tw-items-center tw-justify-center tw-rounded-full"
+                    :class="stepClasses(index)"
+                  >
+                    <template
+                      x-if="isStepCompleted(index) && currentStep !== index"
+                    >
+                      <svg
+                        class="tw-h-5 tw-w-5 tw-text-[#464669]"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </template>
+                    <template
+                      x-if="!isStepCompleted(index) || currentStep === index"
+                    >
+                      <span x-text="index + 1"></span>
+                    </template>
+                  </a>
+                </li>
+              </template>
+            </ol>
+          </nav>
+
+          <!-- Steps -->
+          <div class="tw-p-8">
+            <template x-for="(step, index) in steps" :key="index">
+              <div x-show="currentStep === index">
+                <h3 class="tw-text-lg tw-text-center" x-text="step.title"></h3>
+                <div
+                  class="tw-grid sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-4 tw-mt-4"
+                >
+                  <template x-for="option in step.options">
+                    <div>
+                      <!-- Questionnaire option -->
+                      <label
+                        :for="option.id"
+                        class="tw-relative tw-cursor-pointer tw-group"
+                      >
+                        <input
+                          type="radio"
+                          x-model="dataUserSelection[step.id]"
+                          :id="option.id"
+                          :value="option.id"
+                          class="tw-sr-only"
+                          @change="selectOption(index, option.id)"
+                        />
+                        <img
+                          x-show="option.imageSrc"
+                          :src="option.imageSrc"
+                          class="tw-w-full tw-aspect-[1/0.8] tw-object-cover tw-border-2 tw-border-b-0 tw-transition"
+                          :class="{ 'tw-border-[#4B4B89]': dataUserSelection[step.id] === option.id, 'tw-border-gray-300': dataUserSelection[step.id] !== option.id }"
+                        />
+                        <div
+                          x-show="dataUserSelection[step.id] !== option.id"
+                          class="tw-absolute tw-top-0 tw-left-0 tw-z-10 tw-w-full tw-h-full group-hover:tw-bg-[#4B4B89] tw-opacity-5"
+                        ></div>
+                        <div
+                          x-text="option.name"
+                          class="tw-font-serif tw-z-10 tw-w-full tw-p-2 tw-text-center group-hover:tw-opacity-100 tw-transition"
+                          :class="{ 'tw-bg-[#464669] tw-text-white tw-opacity-100': dataUserSelection[step.id] === option.id, 'tw-bg-gray-300 tw-opacity-80 tw-gray-900': dataUserSelection[step.id] !== option.id }"
+                        ></div>
+                      </label>
+                    </div>
+                  </template>
+                </div>
+              </div>
+            </template>
+          </div>
+
+          <!-- Submit Modal -->
+          <div
+            x-cloak
+            x-show="isSubmitModalOpen"
+            x-transition:enter="tw-transition tw-ease-out tw-duration-150"
+            x-transition:enter-start="tw-opacity-0"
+            x-transition:enter-end="tw-opacity-100"
+            x-transition:leave="tw-transition tw-ease-in tw-duration-150"
+            x-transition:leave-start="tw-opacity-100"
+            x-transition:leave-end="tw-opacity-0"
+            class="tw-fixed tw-inset-0 tw-z-[99999] tw-flex tw-items-center tw-justify-center tw-w-full tw-h-full tw-bg-black tw-bg-opacity-50"
+          >
+            <div
+              class="tw-relative tw-w-full tw-max-w-md tw-p-6 tw-m-4 tw-bg-white tw-shadow-lg"
+              @click.away="isSubmitModalOpen = false"
+              @click.stop
+            >
+              <button
+                @click="isSubmitModalOpen = false"
+                class="tw-absolute tw-text-xl tw-text-gray-800 tw-top-6 tw-right-6 hover:tw-text-gray-900 focus:tw-outline-none"
+              >
+                &#x2715;
+              </button>
+
+              <h2 class="tw-mb-6 tw-text-xl">Please fill in your details:</h2>
+              <form method="GET">
+                <input
+                  type="hidden"
+                  name="selection"
+                  id="selection"
+                  :value="JSON.stringify(dataUserSelection)"
+                />
+
+                <div class="tw-grid tw-grid-cols-1 tw-gap-x-8 tw-gap-y-4">
+                  <div>
+                    <label
+                      for="u_name"
+                      class="tw-block tw-text-sm tw-font-medium tw-leading-6 tw-text-gray-900"
+                      >Full name</label
+                    >
+                    <div class="tw-mt-2.5">
+                      <input
+                        type="text"
+                        name="u_name"
+                        required
+                        autocomplete="name"
+                        class="tw-block tw-w-full tw-border-0 tw-px-3.5 tw-py-2 tw-text-gray-900 tw-ring-1 tw-ring-inset tw-ring-gray-300 placeholder:tw-text-gray-400 focus:tw-ring-2 focus:tw-ring-inset focus:ring-primary-blue-dark sm:tw-text-sm sm:tw-leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label
+                      for="u_phone"
+                      class="tw-block tw-text-sm tw-font-medium tw-leading-6 tw-text-gray-900"
+                      >Phone number</label
+                    >
+                    <div class="tw-mt-2.5">
+                      <input
+                        type="tel"
+                        name="u_phone"
+                        autocomplete="tel"
+                        class="tw-block tw-w-full tw-border-0 tw-px-3.5 tw-py-2 tw-text-gray-900 tw-ring-1 tw-ring-inset tw-ring-gray-300 placeholder:tw-text-gray-400 focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-[#464669] sm:tw-text-sm sm:tw-leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label
+                      for="u_email"
+                      class="tw-block tw-text-sm tw-font-medium tw-leading-6 tw-text-gray-900"
+                      >Email address</label
+                    >
+                    <div class="tw-mt-2.5">
+                      <input
+                        type="email"
+                        name="u_email"
+                        autocomplete="email"
+                        class="tw-block tw-w-full tw-border-0 tw-px-3.5 tw-py-2 tw-text-gray-900 tw-ring-1 tw-ring-inset tw-ring-gray-300 placeholder:tw-text-gray-400 focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-[#464669] sm:tw-text-sm sm:tw-leading-6"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="tw-flex tw-mt-8">
+                  <button
+                    type="submit"
+                    class="tw-flex tw-items-center tw-py-2 tw-justify-center tw-w-full tw-text-white tw-flex-1 tw-bg-[#464669] hover:tw-bg-[#4B4B89] tw-transition focus:tw-outline-none tw-text-sm tw-font-medium"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -8,21 +8,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&family=Roboto&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.3.3/dist/cdn.min.js" defer></script>
-    <title>Customise Ring & Gem | TAMAKITO Jewellery</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.3.3/dist/cdn.min.js"
+      defer
+    ></script>
+    <title>Customise | TAMAKITO Jewellery</title>
   </head>
   <body>
-    <div
-      x-data="{
-        dataCurrentAccordion: -2,
-        dataUserSelection: { type: '' },
-        dataCurrentPreviewImage: '',
-        dataCurrentPlayingVideo: '',
+    <div id="tailwind">
+      <div
+        x-data="{
+                  dataCurrentAccordion: -2,
+                  dataUserSelection: { type: '' },
+                  dataCurrentPreviewImage: '',
+                  dataCurrentPlayingVideo: '',
 
-        isSubmitModalOpen: false,
+                  isSubmitModalOpen: false,
 
+<<<<<<< Updated upstream
         isVideoModalOpen: false,
         showVideoModal(videoUrl) {
           this.dataCurrentPlayingVideo = videoUrl;
@@ -35,117 +43,305 @@
             this.dataCurrentPlayingVideo = '';
           }, 300);
         },
+=======
+                  isVideoModalOpen: false,
+                  showVideoModal(videoUrl) {
+                    this.dataCurrentPlayingVideo = videoUrl;
+                    this.isVideoModalOpen = true;
+                  },
+                  hideVideoModal() {
+                    this.isVideoModalOpen = false;
+                    setTimeout(() => {
+                      this.dataCurrentPlayingVideo = '';
+                    }, 300);
+                  },
+>>>>>>> Stashed changes
 
-        hasUserSelectedAllOptions() {
-          return Object.values(this.dataUserSelection).every(selection => selection !== '');
-        },
+                  hasUserSelectedAllOptions() {
+                    return Object.values(this.dataUserSelection).every(selection => selection !== '');
+                  },
 
-        hasUserSelectedAnyOption() {
-          return Object.values(this.dataUserSelection).some(selection => selection !== '');
-        },
+                  hasUserSelectedAnyOption() {
+                    return Object.values(this.dataUserSelection).some(selection => selection !== '');
+                  },
 
-        hasUserSelectedThisOption(part) {
-          if(this.dataUserSelection[part] === '' || this.dataUserSelection[part] === undefined || this.dataUserSelection[part] === null) return false;
-          return true;
-        },
-      }"
-      class="max-w-3xl px-4 py-8 mx-auto lg:max-w-7xl sm:px-6 lg:px-8"
-    >
-      <div class="h-full lg:grid lg:grid-cols-2 lg:border sm:border-gray-300">
-        <div class="mb-4 border border-gray-300 lg:border-none lg:mb-0">
-          <img x-show="dataUserSelection['type'] !== 'band' && dataUserSelection['type'] !== 'ring'" class="object-contain w-full max-h-96 lg:max-h-none" src="assets/img/logo.png" alt="" />
-          <img x-show="dataUserSelection['type'] === 'band'" class="object-contain w-full max-h-96 lg:max-h-none" src="assets/img/customisation/band/preview.jpg" alt="" />
-          <img x-show="dataUserSelection['type'] === 'ring'" class="object-contain w-full max-h-96 lg:max-h-none" src="assets/img/customisation/ring/preview.jpg" alt="" />
-        </div>
-        <div class="bg-gray-50 lg:p-4 lg:border-l lg:border-gray-300">
-          <div class="flex flex-col justify-start h-full">
-            <!-- RING OR BAND SELECTION -->
-            <div class="mb-3">
-              <button @click="dataCurrentAccordion === -2 ? dataCurrentAccordion = null : dataCurrentAccordion = -2" class="w-full px-4 py-3 text-left flex items-center justify-between text-sm text-white bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none">
-                <span class="flex items-center flex-shrink-0">
-                  <span x-show="!hasUserSelectedThisOption('type')" class="inline-flex items-center justify-center border rounded-full h-7 w-7 border-white/50">1</span>
-                  <span x-show="hasUserSelectedThisOption('type')" class="rounded-full bg-white text-[#464669] inline-flex justify-center items-center h-7 w-7">
-                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <mask id="mask0_3_11156" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                        <rect width="24" height="24" fill="currentColor" />
-                      </mask>
-                      <g mask="url(#mask0_3_11156)">
-                        <path d="M9.55001 18L3.85001 12.3L5.27501 10.875L9.55001 15.15L18.725 5.97498L20.15 7.39998L9.55001 18Z" fill="currentColor" />
-                      </g>
-                    </svg>
+                  hasUserSelectedThisOption(part) {
+                    if(this.dataUserSelection[part] === '' || this.dataUserSelection[part] === undefined || this.dataUserSelection[part] === null) return false;
+                    return true;
+                  },
+                }"
+        class="tw-max-w-3xl tw-px-4 tw-py-8 tw-mx-auto lg:tw-max-w-7xl sm:tw-px-6 lg:tw-px-8 tw-isolate"
+      >
+        <div
+          class="tw-h-full lg:tw-grid lg:tw-grid-cols-2 lg:tw-border sm:tw-border-gray-300"
+        >
+          <div
+            class="tw-mb-4 tw-border tw-border-gray-300 lg:tw-border-none lg:tw-mb-0 tw-sticky tw-top-0 lg:tw-h-[384px]"
+          >
+            <img
+              x-show="dataUserSelection['type'] !== 'band' && dataUserSelection['type'] !== 'tw-ring'"
+              class="tw-object-contain tw-w-full tw-max-h-96 lg:max-h-none"
+              src="https://tamakito.com/wp-content/customise-img/logo-2.png"
+              alt=""
+            />
+            <img
+              x-show="dataUserSelection['type'] === 'band'"
+              class="tw-object-contain tw-w-full tw-max-h-96 lg:max-h-none"
+              src="https://tamakito.com/wp-content/customise-img/customisation/band/preview.jpg"
+              alt=""
+            />
+            <img
+              x-show="dataUserSelection['type'] === 'tw-ring'"
+              class="tw-object-contain tw-w-full tw-max-h-96 lg:max-h-none"
+              src="https://tamakito.com/wp-content/customise-img/customisation/ring/preview.jpg"
+              alt=""
+            />
+          </div>
+          <div
+            class="tw-bg-gray-50 lg:tw-p-4 lg:tw-border-l lg:tw-border-gray-300"
+          >
+            <div class="tw-flex tw-flex-col tw-justify-start tw-h-full">
+              <!-- RING OR BAND SELECTION -->
+              <div class="tw-mb-3">
+                <button
+                  @click="dataCurrentAccordion === -2 ? dataCurrentAccordion = null : dataCurrentAccordion = -2"
+                  class="tw-w-full tw-px-4 tw-py-3 tw-text-left tw-flex tw-items-center tw-justify-between tw-text-sm tw-text-white tw-bg-[#464669] hover:tw-bg-[#4B4B89] tw-transition focus:tw-outline-none"
+                >
+                  <span class="tw-flex tw-items-center tw-flex-shrink-0">
+                    <span
+                      x-show="!hasUserSelectedThisOption('type')"
+                      class="tw-inline-flex tw-items-center tw-justify-center tw-border tw-rounded-full tw-h-7 tw-w-7 border-white/50"
+                      >1</span
+                    >
+                    <span
+                      x-show="hasUserSelectedThisOption('type')"
+                      class="tw-rounded-full tw-bg-white tw-text-[#464669] tw-inline-flex tw-justify-center tw-items-center tw-h-7 tw-w-7"
+                    >
+                      <svg
+                        class="tw-w-5 tw-h-5"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_3_11156"
+                          style="mask-type: alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="currentColor" />
+                        </mask>
+                        <g mask="url(#mask0_3_11156)">
+                          <path
+                            d="M9.55001 18L3.85001 12.3L5.27501 10.875L9.55001 15.15L18.725 5.97498L20.15 7.39998L9.55001 18Z"
+                            fill="currentColor"
+                          />
+                        </g>
+                      </svg>
+                    </span>
+                    <span class="tw-ml-2">Type</span>
                   </span>
-                  <span class="ml-2">Type</span>
-                </span>
-                <span class="flex-grow text-right truncate">
-                  <span x-show="dataUserSelection['type']" class="mx-4 text-sm opacity-80">
-                    <span x-show="dataUserSelection['type'] === 'ring'">Ring</span>
-                    <span x-show="dataUserSelection['type'] === 'band'">Band</span>
+                  <span class="tw-flex-grow tw-text-right tw-truncate">
+                    <span
+                      x-show="dataUserSelection['type']"
+                      class="tw-mx-4 tw-text-sm tw-opacity-80"
+                    >
+                      <span x-show="dataUserSelection['type'] === 'tw-ring'"
+                        >Ring</span
+                      >
+                      <span x-show="dataUserSelection['type'] === 'band'"
+                        >Band</span
+                      >
+                    </span>
                   </span>
-                </span>
-              </button>
-              <div x-show.transition.duration.150="dataCurrentAccordion === -2" class="p-4 border border-t-0 border-gray-300 bg-white">
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  <label class="relative cursor-pointer group">
-                    <input type="radio" x-model="dataUserSelection['type']" id="type-ring" value="ring" class="sr-only" @click="if(dataUserSelection['type'] !== 'ring') dataUserSelection = { type: 'ring', gem: '' }" />
-                    <img src="assets/img/customisation/ring.jpg" class="w-full aspect-square object-cover border" :class="{ 'border-[#464669]': dataUserSelection['type'] === 'ring', 'border-gray-300': dataUserSelection['type'] !== 'ring' }" />
-                    <div x-show="dataUserSelection['type'] === 'ring'" class="absolute top-0 left-0 w-full h-full bg-[#464669] opacity-10"></div>
-                    <span class="absolute bottom-0 left-0 w-full p-1 text-center text-sm group-hover:bg-opacity-100 text-white bg-[#464669] transition" :class="{ 'bg-opacity-100': dataUserSelection['type'] === 'ring', 'bg-opacity-80': dataUserSelection['type'] !== 'ring' }">Ring</span>
-                  </label>
+                </button>
+                <div
+                  x-show.transition.duration.150="dataCurrentAccordion === -2"
+                  class="tw-p-4 tw-bg-white tw-border tw-border-t-0 tw-border-gray-300"
+                >
+                  <div
+                    class="tw-grid tw-grid-cols-2 tw-gap-4 sm:tw-grid-cols-3"
+                  >
+                    <label class="tw-relative tw-cursor-pointer group">
+                      <input
+                        type="radio"
+                        x-model="dataUserSelection['type']"
+                        id="type-ring"
+                        value="tw-ring"
+                        class="tw-sr-only"
+                        @click="if(dataUserSelection['type'] !== 'tw-ring') dataUserSelection = { type: 'tw-ring', gem: '' }"
+                      />
+                      <img
+                        src="https://tamakito.com/wp-content/customise-img/customisation/ring.jpg"
+                        class="tw-object-cover tw-w-full tw-border tw-aspect-square"
+                        :class="{ 'tw-border-[#464669]': dataUserSelection['type'] === 'tw-ring', 'tw-border-gray-300': dataUserSelection['type'] !== 'tw-ring' }"
+                      />
+                      <div
+                        x-show="dataUserSelection['type'] === 'tw-ring'"
+                        class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-bg-[#464669] tw-opacity-10"
+                      ></div>
+                      <span
+                        class="tw-font-serif tw-absolute tw-bottom-0 tw-left-0 tw-w-full tw-p-1 tw-text-center group-hover:tw-bg-opacity-100 tw-text-white tw-bg-[#464669] tw-transition"
+                        :class="{ 'tw-bg-opacity-100': dataUserSelection['type'] === 'tw-ring', 'tw-bg-opacity-80': dataUserSelection['type'] !== 'tw-ring' }"
+                        >Ring</span
+                      >
+                    </label>
 
-                  <label class="relative cursor-pointer group">
-                    <input type="radio" x-model="dataUserSelection['type']" id="type-band" value="band" class="sr-only" @click="if(dataUserSelection['type'] !== 'band') dataUserSelection = { type: 'band' }" />
-                    <img src="assets/img/customisation/band.jpg" class="w-full aspect-square object-cover border" :class="{ 'border-[#464669]': dataUserSelection['type'] === 'band', 'border-gray-300': dataUserSelection['type'] !== 'band' }" />
-                    <div x-show="dataUserSelection['type'] === 'band'" class="absolute top-0 left-0 w-full h-full bg-[#464669] opacity-10"></div>
-                    <span class="absolute bottom-0 left-0 w-full p-1 text-center text-sm group-hover:bg-opacity-100 text-white bg-[#464669] transition" :class="{ 'bg-opacity-100': dataUserSelection['type'] === 'band', 'bg-opacity-80': dataUserSelection['type'] !== 'band' }">Band</span>
-                  </label>
+                    <label class="tw-relative tw-cursor-pointer group">
+                      <input
+                        type="radio"
+                        x-model="dataUserSelection['type']"
+                        id="type-band"
+                        value="band"
+                        class="tw-sr-only"
+                        @click="if(dataUserSelection['type'] !== 'band') dataUserSelection = { type: 'band' }"
+                      />
+                      <img
+                        src="https://tamakito.com/wp-content/customise-img/customisation/band.jpg"
+                        class="tw-object-cover tw-w-full tw-border tw-aspect-square"
+                        :class="{ 'tw-border-[#464669]': dataUserSelection['type'] === 'band', 'tw-border-gray-300': dataUserSelection['type'] !== 'band' }"
+                      />
+                      <div
+                        x-show="dataUserSelection['type'] === 'band'"
+                        class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full bg-[#464669] tw-opacity-10"
+                      ></div>
+                      <span
+                        class="tw-font-serif tw-absolute tw-bottom-0 tw-left-0 tw-w-full tw-p-1 tw-text-center group-hover:tw-bg-opacity-100 tw-text-white tw-bg-[#464669] tw-transition"
+                        :class="{ 'tw-bg-opacity-100': dataUserSelection['type'] === 'band', 'tw-bg-opacity-80': dataUserSelection['type'] !== 'band' }"
+                        >Band</span
+                      >
+                    </label>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- IF USER SELECTED RING, SHOW GEM SELECTION-->
-            <div class="mb-3" x-show="dataUserSelection['type'] === 'ring'" x-transition>
-              <button @click="dataCurrentAccordion === -1 ? dataCurrentAccordion = null : dataCurrentAccordion = -1" class="w-full px-4 py-3 text-left flex items-center justify-between text-sm text-white bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none">
-                <span class="flex items-center flex-shrink-0">
-                  <span x-show="!hasUserSelectedThisOption('gem')" class="inline-flex items-center justify-center border rounded-full h-7 w-7 border-white/50">2</span>
-                  <span x-show="hasUserSelectedThisOption('gem')" class="rounded-full bg-white text-[#464669] inline-flex justify-center items-center h-7 w-7">
-                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <mask id="mask0_3_11156" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                        <rect width="24" height="24" fill="currentColor" />
-                      </mask>
-                      <g mask="url(#mask0_3_11156)">
-                        <path d="M9.55001 18L3.85001 12.3L5.27501 10.875L9.55001 15.15L18.725 5.97498L20.15 7.39998L9.55001 18Z" fill="currentColor" />
-                      </g>
-                    </svg>
+              <!-- IF USER SELECTED RING, SHOW GEM SELECTION-->
+              <div
+                class="tw-mb-3"
+                x-show="dataUserSelection['type'] === 'tw-ring'"
+                x-transition
+              >
+                <button
+                  @click="dataCurrentAccordion === -1 ? dataCurrentAccordion = null : dataCurrentAccordion = -1"
+                  class="tw-w-full tw-px-4 tw-py-3 tw-text-left tw-flex tw-items-center tw-justify-between tw-text-sm tw-text-white tw-bg-[#464669] hover:tw-bg-[#4B4B89] tw-transition focus:tw-outline-none"
+                >
+                  <span class="tw-flex tw-items-center tw-flex-shrink-0">
+                    <span
+                      x-show="!hasUserSelectedThisOption('gem')"
+                      class="tw-inline-flex tw-items-center tw-justify-center tw-border tw-rounded-full tw-h-7 tw-w-7 border-white/50"
+                      >2</span
+                    >
+                    <span
+                      x-show="hasUserSelectedThisOption('gem')"
+                      class="tw-rounded-full tw-bg-white tw-text-[#464669] tw-inline-flex tw-justify-center tw-items-center tw-h-7 tw-w-7"
+                    >
+                      <svg
+                        class="tw-w-5 tw-h-5"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_3_11156"
+                          style="mask-type: alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="currentColor" />
+                        </mask>
+                        <g mask="url(#mask0_3_11156)">
+                          <path
+                            d="M9.55001 18L3.85001 12.3L5.27501 10.875L9.55001 15.15L18.725 5.97498L20.15 7.39998L9.55001 18Z"
+                            fill="currentColor"
+                          />
+                        </g>
+                      </svg>
+                    </span>
+                    <span class="tw-ml-2">Gem</span>
                   </span>
-                  <span class="ml-2">Gem</span>
-                </span>
-                <span class="flex-grow text-right truncate">
-                  <span x-show="dataUserSelection['gem']" class="mx-4 text-sm opacity-80">
-                    <span x-show="dataUserSelection['gem'] === 'diamond'">Diamond</span>
-                    <span x-show="dataUserSelection['gem'] === 'colored-stones'">Colored Stones</span>
+                  <span class="tw-flex-grow tw-text-right tw-truncate">
+                    <span
+                      x-show="dataUserSelection['gem']"
+                      class="tw-mx-4 tw-text-sm tw-opacity-80"
+                    >
+                      <span x-show="dataUserSelection['gem'] === 'diamond'"
+                        >Diamond</span
+                      >
+                      <span
+                        x-show="dataUserSelection['gem'] === 'colored-stones'"
+                        >Colored Stones</span
+                      >
+                    </span>
                   </span>
-                </span>
-              </button>
+                </button>
 
-              <div x-show.transition.duration.150="dataCurrentAccordion === -1" class="p-4 border border-t-0 border-gray-300 bg-white">
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  <label class="relative cursor-pointer group">
-                    <input type="radio" x-model="dataUserSelection['gem']" id="gem-diamond" value="diamond" class="sr-only" @click="if(dataUserSelection['gem'] !== 'diamond') dataUserSelection = {type: 'ring', gem: 'diamond'}" />
-                    <img src="assets/img/customisation/ring/diamond.jpg" class="w-full aspect-square object-cover border" :class="{ 'border-[#464669]': dataUserSelection['gem'] === 'diamond', 'border-gray-300': dataUserSelection['gem'] !== 'diamond' }" />
-                    <div x-show="dataUserSelection['gem'] === 'diamond'" class="absolute top-0 left-0 w-full h-full bg-[#464669] opacity-10"></div>
-                    <span class="absolute bottom-0 left-0 w-full p-1 text-center text-sm group-hover:bg-opacity-100 text-white bg-[#464669] transition" :class="{ 'bg-opacity-100': dataUserSelection['gem'] === 'diamond', 'bg-opacity-80': dataUserSelection['gem'] !== 'diamond' }">Diamond</span>
-                  </label>
+                <div
+                  x-show.transition.duration.150="dataCurrentAccordion === -1"
+                  class="tw-p-4 tw-bg-white tw-border tw-border-t-0 tw-border-gray-300"
+                >
+                  <div
+                    class="tw-grid tw-grid-cols-2 tw-gap-4 sm:tw-grid-cols-3"
+                  >
+                    <label class="tw-relative tw-cursor-pointer group">
+                      <input
+                        type="radio"
+                        x-model="dataUserSelection['gem']"
+                        id="gem-diamond"
+                        value="diamond"
+                        class="tw-sr-only"
+                        @click="if(dataUserSelection['gem'] !== 'diamond') dataUserSelection = {type: 'tw-ring', gem: 'diamond'}"
+                      />
+                      <img
+                        src="https://tamakito.com/wp-content/customise-img/customisation/ring/diamond.jpg"
+                        class="tw-object-cover tw-w-full tw-border tw-aspect-square"
+                        :class="{ 'tw-border-[#464669]': dataUserSelection['gem'] === 'diamond', 'tw-border-gray-300': dataUserSelection['gem'] !== 'diamond' }"
+                      />
+                      <div
+                        x-show="dataUserSelection['gem'] === 'diamond'"
+                        class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-bg-[#464669] tw-opacity-10"
+                      ></div>
+                      <span
+                        class="tw-font-serif tw-absolute tw-bottom-0 tw-left-0 tw-w-full tw-p-1 tw-text-center group-hover:tw-bg-opacity-100 tw-text-white tw-bg-[#464669] tw-transition"
+                        :class="{ 'tw-bg-opacity-100': dataUserSelection['gem'] === 'diamond', 'tw-bg-opacity-80': dataUserSelection['gem'] !== 'diamond' }"
+                        >Diamond</span
+                      >
+                    </label>
 
-                  <label class="relative cursor-pointer group">
-                    <input type="radio" x-model="dataUserSelection['gem']" id="gem-colored" value="colored-stones" class="sr-only" @click="if(dataUserSelection['gem'] !== 'colored-stones') dataUserSelection = {type: 'ring', gem: 'colored-stones'}" />
-                    <img src="assets/img/customisation/ring/colored_stones.jpg" class="w-full aspect-square object-cover border" :class="{ 'border-[#464669]': dataUserSelection['gem'] === 'colored-stones', 'border-gray-300': dataUserSelection['gem'] !== 'colored-stones' }" />
-                    <div x-show="dataUserSelection['gem'] === 'colored-stones'" class="absolute top-0 left-0 w-full h-full bg-[#464669] opacity-10"></div>
-                    <span class="absolute bottom-0 left-0 w-full p-1 text-center text-sm group-hover:bg-opacity-100 text-white bg-[#464669] transition" :class="{ 'bg-opacity-100': dataUserSelection['gem'] === 'colored-stones', 'bg-opacity-80': dataUserSelection['gem'] !== 'colored-stones' }">Colored Stones</span>
-                  </label>
+                    <label class="tw-relative tw-cursor-pointer group">
+                      <input
+                        type="radio"
+                        x-model="dataUserSelection['gem']"
+                        id="gem-colored"
+                        value="colored-stones"
+                        class="tw-sr-only"
+                        @click="if(dataUserSelection['gem'] !== 'colored-stones') dataUserSelection = {type: 'tw-ring', gem: 'colored-stones'}"
+                      />
+                      <img
+                        src="https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones.jpg"
+                        class="tw-object-cover tw-w-full tw-border tw-aspect-square"
+                        :class="{ 'tw-border-[#464669]': dataUserSelection['gem'] === 'colored-stones', 'tw-border-gray-300': dataUserSelection['gem'] !== 'colored-stones' }"
+                      />
+                      <div
+                        x-show="dataUserSelection['gem'] === 'colored-stones'"
+                        class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-bg-[#464669] tw-opacity-10"
+                      ></div>
+                      <span
+                        class="tw-font-serif tw-absolute tw-bottom-0 tw-left-0 tw-w-full tw-p-1 tw-text-center group-hover:tw-bg-opacity-100 tw-text-white tw-bg-[#464669] tw-transition"
+                        :class="{ 'tw-bg-opacity-100': dataUserSelection['gem'] === 'colored-stones', 'tw-bg-opacity-80': dataUserSelection['gem'] !== 'colored-stones' }"
+                        >Colored Stones</span
+                      >
+                    </label>
+                  </div>
                 </div>
               </div>
-            </div>
 
+<<<<<<< HEAD
             <!-- IF USER SELECTED BAND, SHOW BAND SELECTION-->
             <template x-if="dataUserSelection['type'] === 'band'">
               <div x-show="dataUserSelection['type'] === 'band'" x-transition>
@@ -208,50 +404,194 @@
                           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="mask0_3_11156" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
                               <rect width="24" height="24" fill="currentColor" />
+=======
+              <!-- IF USER SELECTED BAND, SHOW BAND SELECTION-->
+              <template x-if="dataUserSelection['type'] === 'band'">
+                <div x-show="dataUserSelection['type'] === 'band'" x-transition>
+                  <template
+                    x-for="(item, index) in [
+                              {
+                                id: 'b-band_style',
+                                title: 'Band Style',
+                                video: 'yB1odIgnDAc',
+                                options: [
+                                  { id: 'b-band_style-knife_edge', name: 'Knife Edge', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/band/band_style/knife_edge.png' },
+                                  { id: 'b-band_style-round_edge', name: 'Round Edge', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/band/band_style/round_edge.png' },
+                                  { id: 'b-band_style-square_edge', name: 'Square Edge', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/band/band_style/square_edge.png' },
+                                  { id: 'b-band_style-tapered', name: 'Tapered', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/band/band_style/tapered.png' },
+                                  { id: 'b-band_style-twist', name: 'Twist', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/band/band_style/twist.png' },
+                                ]
+                              },
+                              {
+                                id: 'b-accent_stones',
+                                title: 'Accent Stones',
+                                video: 'UM2h4jzEcsQ',
+                                options: [
+                                  { id: 'b-accent_stones-bead', name: 'Bead', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/band/accent_stones/bead.jpg' },
+                                  { id: 'b-accent_stones-pave', name: 'Pave', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/band/accent_stones/pave.jpg' },
+                                  { id: 'b-accent_stones-none', name: 'None', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/band/accent_stones/none.jpg' },
+                                ]
+                              },
+                              {
+                              id: 'b-band_material',
+                                title: 'Band Material',
+                                type: 'material',
+                                video: 'Rvb4JSFg3Yw',
+                                options: [
+                                  { id: 'b-band_material-silver', name: 'Silver', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/band/band_material/silver.jpg' },
+                                  { id: 'b-band_material-rose_gold', name: 'Rose Gold', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/band/band_material/rose_gold.jpg' },
+                                  { id: 'b-band_material-white_gold', name: 'White Gold', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/band/band_material/white_gold.jpg' },
+                                  { id: 'b-band_material-yellow_gold', name: 'Yellow Gold', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/band/band_material/yellow_gold.jpg' },
+                                ]
+                              },
+                          ]"
+                  >
+                    <div
+                      class="tw-mb-3"
+                      x-data
+                      x-init="dataUserSelection[item.id] = ''"
+                    >
+                      <button
+                        @click="dataCurrentAccordion === index ? dataCurrentAccordion = null : dataCurrentAccordion = index"
+                        class="tw-w-full tw-px-4 tw-py-3 tw-text-left tw-flex tw-items-center tw-justify-between tw-text-sm tw-text-white tw-bg-[#464669] hover:tw-bg-[#4B4B89] tw-transition focus:tw-outline-none"
+                      >
+                        <span class="tw-flex tw-items-center tw-flex-shrink-0">
+                          <span
+                            x-show="!hasUserSelectedThisOption(item.id)"
+                            class="tw-inline-flex tw-items-center tw-justify-center tw-border tw-rounded-full tw-h-7 tw-w-7 border-white/50"
+                            x-text="index + 2"
+                          ></span>
+                          <span
+                            x-show="hasUserSelectedThisOption(item.id)"
+                            class="tw-rounded-full tw-bg-white tw-text-[#464669] tw-inline-flex tw-justify-center tw-items-center tw-h-7 tw-w-7"
+                          >
+                            <svg
+                              class="tw-w-5 tw-h-5"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <mask
+                                id="mask0_3_11156"
+                                style="mask-type: alpha"
+                                maskUnits="userSpaceOnUse"
+                                x="0"
+                                y="0"
+                                width="24"
+                                height="24"
+                              >
+                                <rect
+                                  width="24"
+                                  height="24"
+                                  fill="currentColor"
+                                />
+                              </mask>
+                              <g mask="url(#mask0_3_11156)">
+                                <path
+                                  d="M9.55001 18L3.85001 12.3L5.27501 10.875L9.55001 15.15L18.725 5.97498L20.15 7.39998L9.55001 18Z"
+                                  fill="currentColor"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                          <span class="tw-ml-2" x-text="item.title"></span>
+                        </span>
+                        <span class="tw-flex-grow tw-text-right tw-truncate">
+                          <span
+                            x-show="dataUserSelection[item.id]"
+                            class="tw-mx-4 tw-text-sm tw-opacity-80"
+                          >
+                            <template x-if="dataUserSelection[item.id]">
+                              <span
+                                x-text="item.options.find(o => o.id === dataUserSelection[item.id]) !== undefined ? item.options.find(o => o.id === dataUserSelection[item.id]).name : ''"
+                              ></span>
+                            </template>
+                          </span>
+                        </span>
+                        <span
+                          @click.stop="showVideoModal(item.video)"
+                          class="tw-inline-block group"
+                        >
+                          <svg
+                            class="tw-w-5 tw-h-5 tw-text-white tw-transition group-hover:tw-opacity-100 tw-opacity-70"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <mask
+                              id="mask0_51_1068"
+                              style="mask-type: alpha"
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                              width="24"
+                              height="24"
+                            >
+                              <rect
+                                width="24"
+                                height="24"
+                                fill="currentColor"
+                              />
+>>>>>>> 29747db8bb5074b7ccf151cf80ea1c8639ce4d0b
                             </mask>
-                            <g mask="url(#mask0_3_11156)">
-                              <path d="M9.55001 18L3.85001 12.3L5.27501 10.875L9.55001 15.15L18.725 5.97498L20.15 7.39998L9.55001 18Z" fill="currentColor" />
+                            <g mask="url(#mask0_51_1068)">
+                              <path
+                                d="M11.95 18C12.3 18 12.5958 17.8792 12.8375 17.6375C13.0792 17.3958 13.2 17.1 13.2 16.75C13.2 16.4 13.0792 16.1042 12.8375 15.8625C12.5958 15.6208 12.3 15.5 11.95 15.5C11.6 15.5 11.3042 15.6208 11.0625 15.8625C10.8208 16.1042 10.7 16.4 10.7 16.75C10.7 17.1 10.8208 17.3958 11.0625 17.6375C11.3042 17.8792 11.6 18 11.95 18ZM11.05 14.15H12.9C12.9 13.6 12.9625 13.1667 13.0875 12.85C13.2125 12.5333 13.5667 12.1 14.15 11.55C14.5833 11.1167 14.925 10.7042 15.175 10.3125C15.425 9.92083 15.55 9.45 15.55 8.9C15.55 7.96667 15.2083 7.25 14.525 6.75C13.8417 6.25 13.0333 6 12.1 6C11.15 6 10.3792 6.25 9.7875 6.75C9.19583 7.25 8.78333 7.85 8.55 8.55L10.2 9.2C10.2833 8.9 10.4708 8.575 10.7625 8.225C11.0542 7.875 11.5 7.7 12.1 7.7C12.6333 7.7 13.0333 7.84583 13.3 8.1375C13.5667 8.42917 13.7 8.75 13.7 9.1C13.7 9.43333 13.6 9.74583 13.4 10.0375C13.2 10.3292 12.95 10.6 12.65 10.85C11.9167 11.5 11.4667 11.9917 11.3 12.325C11.1333 12.6583 11.05 13.2667 11.05 14.15ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22Z"
+                                fill="currentColor"
+                              />
                             </g>
                           </svg>
                         </span>
-                        <span class="ml-2" x-text="item.title"></span>
-                      </span>
-                      <span class="flex-grow text-right truncate">
-                        <span x-show="dataUserSelection[item.id]" class="mx-4 text-sm opacity-80">
-                          <template x-if="dataUserSelection[item.id]">
-                            <span x-text="item.options.find(o => o.id === dataUserSelection[item.id]) !== undefined ? item.options.find(o => o.id === dataUserSelection[item.id]).name : ''"></span>
+                      </button>
+                      <div
+                        x-show.transition.duration.150="dataCurrentAccordion === index"
+                        class="tw-p-4 tw-bg-white tw-border tw-border-t-0 tw-border-gray-300"
+                      >
+                        <div
+                          class="tw-grid tw-grid-cols-2 tw-gap-4 sm:tw-grid-cols-3"
+                        >
+                          <template x-for="option in item.options">
+                            <label
+                              :for="option.id"
+                              class="tw-relative tw-cursor-pointer group"
+                            >
+                              <input
+                                type="radio"
+                                x-model="dataUserSelection[item.id]"
+                                :id="option.id"
+                                :value="option.id"
+                                class="tw-sr-only"
+                              />
+                              <img
+                                :src="option.imageSrc"
+                                class="tw-w-full tw-aspect-[1/0.8] tw-object-cover tw-border tw-border-b-0 tw-transition"
+                                :class="{ 'tw-border-[#464669]': dataUserSelection[item.id] === option.id, 'tw-border-gray-300': dataUserSelection[item.id] !== option.id }"
+                              />
+                              <div
+                                x-show="dataUserSelection[item.id] !== option.id"
+                                class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full group-hover:tw-bg-[#4B4B89] tw-opacity-5"
+                              ></div>
+                              <div
+                                x-show="dataUserSelection[item.id] === option.id"
+                                class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-bg-[#464669] tw-opacity-5"
+                              ></div>
+                              <div
+                                x-text="option.name"
+                                class="tw-font-serif tw-relative tw-z-10 tw-w-full tw-p-1 tw-text-center group-hover:tw-bg-opacity-100 tw-text-white tw-bg-[#464669] tw-transition"
+                                :class="{ 'tw-bg-opacity-100': dataUserSelection[item.id] === option.id, 'tw-bg-opacity-80': dataUserSelection[item.id] !== option.id }"
+                              ></div>
+                            </label>
                           </template>
-                        </span>
-                      </span>
-                      <span @click.stop="showVideoModal(item.video)" class="inline-block group">
-                        <svg class="w-5 h-5 text-white transition group-hover:opacity-100 opacity-70" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <mask id="mask0_51_1068" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                            <rect width="24" height="24" fill="currentColor" />
-                          </mask>
-                          <g mask="url(#mask0_51_1068)">
-                            <path d="M11.95 18C12.3 18 12.5958 17.8792 12.8375 17.6375C13.0792 17.3958 13.2 17.1 13.2 16.75C13.2 16.4 13.0792 16.1042 12.8375 15.8625C12.5958 15.6208 12.3 15.5 11.95 15.5C11.6 15.5 11.3042 15.6208 11.0625 15.8625C10.8208 16.1042 10.7 16.4 10.7 16.75C10.7 17.1 10.8208 17.3958 11.0625 17.6375C11.3042 17.8792 11.6 18 11.95 18ZM11.05 14.15H12.9C12.9 13.6 12.9625 13.1667 13.0875 12.85C13.2125 12.5333 13.5667 12.1 14.15 11.55C14.5833 11.1167 14.925 10.7042 15.175 10.3125C15.425 9.92083 15.55 9.45 15.55 8.9C15.55 7.96667 15.2083 7.25 14.525 6.75C13.8417 6.25 13.0333 6 12.1 6C11.15 6 10.3792 6.25 9.7875 6.75C9.19583 7.25 8.78333 7.85 8.55 8.55L10.2 9.2C10.2833 8.9 10.4708 8.575 10.7625 8.225C11.0542 7.875 11.5 7.7 12.1 7.7C12.6333 7.7 13.0333 7.84583 13.3 8.1375C13.5667 8.42917 13.7 8.75 13.7 9.1C13.7 9.43333 13.6 9.74583 13.4 10.0375C13.2 10.3292 12.95 10.6 12.65 10.85C11.9167 11.5 11.4667 11.9917 11.3 12.325C11.1333 12.6583 11.05 13.2667 11.05 14.15ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22Z" fill="currentColor" />
-                          </g>
-                        </svg>
-                      </span>
-                    </button>
-                    <div x-show.transition.duration.150="dataCurrentAccordion === index" class="p-4 bg-white border border-t-0 border-gray-300">
-                      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
-                        <template x-for="option in item.options">
-                          <label :for="option.id" class="relative cursor-pointer group">
-                            <input type="radio" x-model="dataUserSelection[item.id]" :id="option.id" :value="option.id" class="sr-only" />
-                            <img :src="option.imageSrc" class="w-full aspect-[1/0.8] object-cover border border-b-0 transition" :class="{ 'border-[#464669]': dataUserSelection[item.id] === option.id, 'border-gray-300': dataUserSelection[item.id] !== option.id }" />
-                            <div x-show="dataUserSelection[item.id] !== option.id" class="absolute top-0 left-0 w-full h-full group-hover:bg-[#4B4B89] opacity-5"></div>
-                            <div x-show="dataUserSelection[item.id] === option.id" class="absolute top-0 left-0 w-full h-full bg-[#464669] opacity-5"></div>
-                            <div x-text="option.name" class="font-serif relative z-10 w-full p-1 text-center group-hover:bg-opacity-100 text-white bg-[#464669] transition" :class="{ 'bg-opacity-100': dataUserSelection[item.id] === option.id, 'bg-opacity-80': dataUserSelection[item.id] !== option.id }"></div>
-                          </label>
-                        </template>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </template>
-              </div>
-            </template>
+                  </template>
+                </div>
+              </template>
 
+<<<<<<< HEAD
             <!-- IF USER SELECTED RING AND DIAMOND, SHOW DIAMOND SELECTION -->
             <template x-if="dataUserSelection['type'] === 'ring' && dataUserSelection['gem'] === 'diamond'">
               <div x-show="dataUserSelection['type'] === 'ring' && dataUserSelection['gem'] === 'diamond'" x-transition>
@@ -344,59 +684,239 @@
                       ]
                     },
                 ]"
+=======
+              <!-- IF USER SELECTED RING AND DIAMOND, SHOW DIAMOND SELECTION -->
+              <template
+                x-if="dataUserSelection['type'] === 'tw-ring' && dataUserSelection['gem'] === 'diamond'"
+              >
+                <div
+                  x-show="dataUserSelection['type'] === 'tw-ring' && dataUserSelection['gem'] === 'diamond'"
+                  x-transition
+>>>>>>> 29747db8bb5074b7ccf151cf80ea1c8639ce4d0b
                 >
-                  <div class="mb-3" x-data x-init="dataUserSelection[item.id] = ''">
-                    <button @click="dataCurrentAccordion === index ? dataCurrentAccordion = null : dataCurrentAccordion = index" class="w-full px-4 py-3 text-left flex items-center justify-between text-sm text-white bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none">
-                      <span class="flex-shrink-0 flex items-center">
-                        <span x-show="!hasUserSelectedThisOption(item.id)" class="rounded-full border inline-flex justify-center items-center h-7 w-7 border-white/50" x-text="index + 3"></span>
-                        <span x-show="hasUserSelectedThisOption(item.id)" class="rounded-full bg-white text-[#464669] inline-flex justify-center items-center h-7 w-7">
-                          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <mask id="mask0_3_11156" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                              <rect width="24" height="24" fill="currentColor" />
+                  <template
+                    x-for="(item, index) in [
+                              {
+                                id: 'rd-diamond_shape',
+                                title: 'Diamond Shape',
+                                video: 'yB1odIgnDAc',
+                                options: [
+                                  { id: 'rd-diamond_shape-round', name: 'Round', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/diamond_shape/round.png' },
+                                  { id: 'rd-diamond_shape-cushion', name: 'Cushion', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/diamond_shape/cushion.png' },
+                                  { id: 'rd-diamond_shape-princess', name: 'Princess', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/diamond_shape/princess.png' },
+                                  { id: 'rd-diamond_shape-emerald', name: 'Emerald', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/diamond_shape/emerald.png' },
+                                  { id: 'rd-diamond_shape-radiant', name: 'Radiant', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/diamond_shape/radiant.png' },
+                                  { id: 'rd-diamond_shape-oval', name: 'Oval', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/diamond_shape/oval.png' },
+                                  { id: 'rd-diamond_shape-pear', name: 'Pear', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/diamond_shape/pear.png' },
+                                  { id: 'rd-diamond_shape-asscher', name: 'Asscher', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/diamond_shape/asscher.png' },
+                                  { id: 'rd-diamond_shape-heart', name: 'Heart', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/diamond_shape/heart.png' },
+                                ]
+                              },
+                              {
+                                id: 'rd-setting_styles',
+                                title: 'Setting Styles',
+                                video: 'UM2h4jzEcsQ',
+                                options: [
+                                  { id: 'rd-setting_styles-peg_head', name: 'Peg Head', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/setting_styles/peg_head.jpg' },
+                                  { id: 'rd-setting_styles-halo', name: 'Halo', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/setting_styles/halo.jpg' },
+                                  { id: 'rd-setting_styles-basket', name: 'Basket', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/setting_styles/basket.jpg' },
+                                  { id: 'rd-setting_styles-tiara', name: 'Tiara', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/setting_styles/tiara.jpg' },
+                                  { id: 'rd-setting_styles-trellis', name: 'Trellis', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/setting_styles/trellis.jpg' },
+                                  { id: 'rd-setting_styles-tension', name: 'Tension', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/setting_styles/tension.jpg' },
+                                ]
+                              },
+                              {
+                                id: 'rd-prong_styles',
+                                title: 'Prong Styles',
+                                video: 'Rvb4JSFg3Yw',
+                                options: [
+                                  { id: 'rd-prong_styles-claw', name: 'Claw', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/prong_styles/claw.jpg' },
+                                  { id: 'rd-prong_styles-round', name: 'Round', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/prong_styles/round.jpg' },
+                                  { id: 'rd-prong_styles-heart', name: 'Heart', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/prong_styles/heart.jpg' },
+                                ]
+                              },
+                              {
+                                id: 'rd-band_styles',
+                                title: 'Band Styles',
+                                video: 'yB1odIgnDAc',
+                                options: [
+                                  { id: 'rd-band_styles-knife_edge', name: 'Knife Edge', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/band_styles/knife_edge.png' },
+                                  { id: 'rd-band_styles-round_edge', name: 'Round Edge', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/band_styles/round_edge.png' },
+                                  { id: 'rd-band_styles-square_edge', name: 'Square Edge', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/band_styles/square_edge.png' },
+                                  { id: 'rd-band_styles-tapered', name: 'Tapered', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/band_styles/tapered.png' },
+                                  { id: 'rd-band_styles-split_shank', name: 'Split Shank', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/band_styles/split_shank.jpg' },
+                                  { id: 'rd-band_styles-twist', name: 'Twist', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/band_styles/twist.png' },
+                                ]
+                              },
+                              {
+                                id: 'rd-accent_stones',
+                                title: 'Accent Stones',
+                                video: 'UM2h4jzEcsQ',
+                                options: [
+                                  { id: 'rd-accent_stones-bead', name: 'Bead', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/accent_stones/bead.jpg' },
+                                  { id: 'rd-accent_stones-pave', name: 'Pave', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/accent_stones/pave.jpg' },
+                                  { id: 'rd-accent_stones-none', name: 'None', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/accent_stones/none.jpg' },
+                                ]
+                              },
+                              {
+                                id: 'rd-band_material',
+                                title: 'Band Material',
+                                type: 'material',
+                                video: 'Rvb4JSFg3Yw',
+                                options: [
+                                  { id: 'rd-band_material-silver', name: 'Silver', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/band_material/silver.jpg' },
+                                  { id: 'rd-band_material-rose_gold', name: 'Rose Gold', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/band_material/rose_gold.jpg' },
+                                  { id: 'rd-band_material-white_gold', name: 'White Gold', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/band_material/white_gold.jpg' },
+                                  { id: 'rd-band_material-yellow_gold', name: 'Yellow Gold', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/diamond/band_material/yellow_gold.jpg' },
+                                ]
+                              },
+                          ]"
+                  >
+                    <div
+                      class="tw-mb-3"
+                      x-data
+                      x-init="dataUserSelection[item.id] = ''"
+                    >
+                      <button
+                        @click="dataCurrentAccordion === index ? dataCurrentAccordion = null : dataCurrentAccordion = index"
+                        class="tw-w-full tw-px-4 tw-py-3 tw-text-left tw-flex tw-items-center tw-justify-between tw-text-sm tw-text-white tw-bg-[#464669] hover:tw-bg-[#4B4B89] tw-transition focus:tw-outline-none"
+                      >
+                        <span class="tw-flex tw-items-center tw-flex-shrink-0">
+                          <span
+                            x-show="!hasUserSelectedThisOption(item.id)"
+                            class="tw-inline-flex tw-items-center tw-justify-center tw-border tw-rounded-full tw-h-7 tw-w-7 border-white/50"
+                            x-text="index + 3"
+                          ></span>
+                          <span
+                            x-show="hasUserSelectedThisOption(item.id)"
+                            class="tw-rounded-full tw-bg-white tw-text-[#464669] tw-inline-flex tw-justify-center tw-items-center tw-h-7 tw-w-7"
+                          >
+                            <svg
+                              class="tw-w-5 tw-h-5"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <mask
+                                id="mask0_3_11156"
+                                style="mask-type: alpha"
+                                maskUnits="userSpaceOnUse"
+                                x="0"
+                                y="0"
+                                width="24"
+                                height="24"
+                              >
+                                <rect
+                                  width="24"
+                                  height="24"
+                                  fill="currentColor"
+                                />
+                              </mask>
+                              <g mask="url(#mask0_3_11156)">
+                                <path
+                                  d="M9.55001 18L3.85001 12.3L5.27501 10.875L9.55001 15.15L18.725 5.97498L20.15 7.39998L9.55001 18Z"
+                                  fill="currentColor"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                          <span class="tw-ml-2" x-text="item.title"></span>
+                        </span>
+                        <span class="tw-flex-grow tw-text-right tw-truncate">
+                          <span
+                            x-show="dataUserSelection[item.id]"
+                            class="tw-mx-4 tw-text-sm tw-opacity-80"
+                          >
+                            <template x-if="dataUserSelection[item.id]">
+                              <span
+                                x-text="item.options.find(o => o.id === dataUserSelection[item.id]) !== undefined ? item.options.find(o => o.id === dataUserSelection[item.id]).name : ''"
+                              ></span>
+                            </template>
+                          </span>
+                        </span>
+                        <span
+                          @click.stop="showVideoModal(item.video)"
+                          class="tw-inline-block group"
+                        >
+                          <svg
+                            class="tw-w-5 tw-h-5 tw-text-white tw-transition group-hover:tw-opacity-100 tw-opacity-70"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <mask
+                              id="mask0_51_1068"
+                              style="mask-type: alpha"
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                              width="24"
+                              height="24"
+                            >
+                              <rect
+                                width="24"
+                                height="24"
+                                fill="currentColor"
+                              />
                             </mask>
-                            <g mask="url(#mask0_3_11156)">
-                              <path d="M9.55001 18L3.85001 12.3L5.27501 10.875L9.55001 15.15L18.725 5.97498L20.15 7.39998L9.55001 18Z" fill="currentColor" />
+                            <g mask="url(#mask0_51_1068)">
+                              <path
+                                d="M11.95 18C12.3 18 12.5958 17.8792 12.8375 17.6375C13.0792 17.3958 13.2 17.1 13.2 16.75C13.2 16.4 13.0792 16.1042 12.8375 15.8625C12.5958 15.6208 12.3 15.5 11.95 15.5C11.6 15.5 11.3042 15.6208 11.0625 15.8625C10.8208 16.1042 10.7 16.4 10.7 16.75C10.7 17.1 10.8208 17.3958 11.0625 17.6375C11.3042 17.8792 11.6 18 11.95 18ZM11.05 14.15H12.9C12.9 13.6 12.9625 13.1667 13.0875 12.85C13.2125 12.5333 13.5667 12.1 14.15 11.55C14.5833 11.1167 14.925 10.7042 15.175 10.3125C15.425 9.92083 15.55 9.45 15.55 8.9C15.55 7.96667 15.2083 7.25 14.525 6.75C13.8417 6.25 13.0333 6 12.1 6C11.15 6 10.3792 6.25 9.7875 6.75C9.19583 7.25 8.78333 7.85 8.55 8.55L10.2 9.2C10.2833 8.9 10.4708 8.575 10.7625 8.225C11.0542 7.875 11.5 7.7 12.1 7.7C12.6333 7.7 13.0333 7.84583 13.3 8.1375C13.5667 8.42917 13.7 8.75 13.7 9.1C13.7 9.43333 13.6 9.74583 13.4 10.0375C13.2 10.3292 12.95 10.6 12.65 10.85C11.9167 11.5 11.4667 11.9917 11.3 12.325C11.1333 12.6583 11.05 13.2667 11.05 14.15ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22Z"
+                                fill="currentColor"
+                              />
                             </g>
                           </svg>
                         </span>
-                        <span class="ml-2" x-text="item.title"></span>
-                      </span>
-                      <span class="truncate flex-grow text-right">
-                        <span x-show="dataUserSelection[item.id]" class="mx-4 text-sm opacity-80">
-                          <template x-if="dataUserSelection[item.id]">
-                            <span x-text="item.options.find(o => o.id === dataUserSelection[item.id]) !== undefined ? item.options.find(o => o.id === dataUserSelection[item.id]).name : ''"></span>
+                      </button>
+                      <div
+                        x-show.transition.duration.150="dataCurrentAccordion === index"
+                        class="tw-p-4 tw-bg-white tw-border tw-border-t-0 tw-border-gray-300"
+                      >
+                        <div
+                          class="tw-grid tw-grid-cols-2 tw-gap-4 sm:tw-grid-cols-3"
+                        >
+                          <template x-for="option in item.options">
+                            <label
+                              :for="option.id"
+                              class="tw-relative tw-cursor-pointer group"
+                            >
+                              <input
+                                type="radio"
+                                x-model="dataUserSelection[item.id]"
+                                :id="option.id"
+                                :value="option.id"
+                                class="tw-sr-only"
+                              />
+                              <img
+                                :src="option.imageSrc"
+                                class="tw-w-full tw-aspect-[1/0.8] tw-object-cover tw-border tw-border-b-0 tw-transition"
+                                :class="{ 'tw-border-[#464669]': dataUserSelection[item.id] === option.id, 'tw-border-gray-300': dataUserSelection[item.id] !== option.id }"
+                              />
+                              <div
+                                x-show="dataUserSelection[item.id] !== option.id"
+                                class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full group-hover:tw-bg-[#4B4B89] tw-opacity-5"
+                              ></div>
+                              <div
+                                x-show="dataUserSelection[item.id] === option.id"
+                                class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-bg-[#464669] tw-opacity-5"
+                              ></div>
+                              <div
+                                x-text="option.name"
+                                class="tw-font-serif tw-relative tw-z-10 tw-w-full tw-p-1 tw-text-center group-hover:tw-bg-opacity-100 tw-text-white tw-bg-[#464669] tw-transition"
+                                :class="{ 'tw-bg-opacity-100': dataUserSelection[item.id] === option.id, 'tw-bg-opacity-80': dataUserSelection[item.id] !== option.id }"
+                              ></div>
+                            </label>
                           </template>
-                        </span>
-                      </span>
-                      <span @click.stop="showVideoModal(item.video)" class="inline-block group">
-                        <svg class="w-5 h-5 text-white group-hover:opacity-100 opacity-70 transition" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <mask id="mask0_51_1068" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                            <rect width="24" height="24" fill="currentColor" />
-                          </mask>
-                          <g mask="url(#mask0_51_1068)">
-                            <path d="M11.95 18C12.3 18 12.5958 17.8792 12.8375 17.6375C13.0792 17.3958 13.2 17.1 13.2 16.75C13.2 16.4 13.0792 16.1042 12.8375 15.8625C12.5958 15.6208 12.3 15.5 11.95 15.5C11.6 15.5 11.3042 15.6208 11.0625 15.8625C10.8208 16.1042 10.7 16.4 10.7 16.75C10.7 17.1 10.8208 17.3958 11.0625 17.6375C11.3042 17.8792 11.6 18 11.95 18ZM11.05 14.15H12.9C12.9 13.6 12.9625 13.1667 13.0875 12.85C13.2125 12.5333 13.5667 12.1 14.15 11.55C14.5833 11.1167 14.925 10.7042 15.175 10.3125C15.425 9.92083 15.55 9.45 15.55 8.9C15.55 7.96667 15.2083 7.25 14.525 6.75C13.8417 6.25 13.0333 6 12.1 6C11.15 6 10.3792 6.25 9.7875 6.75C9.19583 7.25 8.78333 7.85 8.55 8.55L10.2 9.2C10.2833 8.9 10.4708 8.575 10.7625 8.225C11.0542 7.875 11.5 7.7 12.1 7.7C12.6333 7.7 13.0333 7.84583 13.3 8.1375C13.5667 8.42917 13.7 8.75 13.7 9.1C13.7 9.43333 13.6 9.74583 13.4 10.0375C13.2 10.3292 12.95 10.6 12.65 10.85C11.9167 11.5 11.4667 11.9917 11.3 12.325C11.1333 12.6583 11.05 13.2667 11.05 14.15ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22Z" fill="currentColor" />
-                          </g>
-                        </svg>
-                      </span>
-                    </button>
-                    <div x-show.transition.duration.150="dataCurrentAccordion === index" class="p-4 border border-t-0 border-gray-300 bg-white">
-                      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        <template x-for="option in item.options">
-                          <label :for="option.id" class="relative cursor-pointer group">
-                            <input type="radio" x-model="dataUserSelection[item.id]" :id="option.id" :value="option.id" class="sr-only" />
-                            <img :src="option.imageSrc" class="w-full aspect-[1/0.8] object-cover border border-b-0 transition" :class="{ 'border-[#464669]': dataUserSelection[item.id] === option.id, 'border-gray-300': dataUserSelection[item.id] !== option.id }" />
-                            <div x-show="dataUserSelection[item.id] !== option.id" class="absolute top-0 left-0 w-full h-full group-hover:bg-[#4B4B89] opacity-5"></div>
-                            <div x-show="dataUserSelection[item.id] === option.id" class="absolute top-0 left-0 w-full h-full bg-[#464669] opacity-5"></div>
-                            <div x-text="option.name" class="font-serif relative z-10 w-full p-1 text-center group-hover:bg-opacity-100 text-white bg-[#464669] transition" :class="{ 'bg-opacity-100': dataUserSelection[item.id] === option.id, 'bg-opacity-80': dataUserSelection[item.id] !== option.id }"></div>
-                          </label>
-                        </template>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </template>
-              </div>
-            </template>
+                  </template>
+                </div>
+              </template>
 
+<<<<<<< HEAD
             <!-- IF USER SELECTED RING AND COLORED STONES, SHOW COLORED STONES SELECTION -->
             <template x-if="dataUserSelection['type'] === 'ring' && dataUserSelection['gem'] === 'colored-stones'">
               <div x-show="dataUserSelection['type'] === 'ring' && dataUserSelection['gem'] === 'colored-stones'" x-transition>
@@ -502,106 +1022,394 @@
                       ]
                     },
                 ]"
+=======
+              <!-- IF USER SELECTED RING AND COLORED STONES, SHOW COLORED STONES SELECTION -->
+              <template
+                x-if="dataUserSelection['type'] === 'tw-ring' && dataUserSelection['gem'] === 'colored-stones'"
+              >
+                <div
+                  x-show="dataUserSelection['type'] === 'tw-ring' && dataUserSelection['gem'] === 'colored-stones'"
+                  x-transition
+>>>>>>> 29747db8bb5074b7ccf151cf80ea1c8639ce4d0b
                 >
-                  <div class="mb-3" x-data x-init="dataUserSelection[item.id] = ''">
-                    <button @click="dataCurrentAccordion === index ? dataCurrentAccordion = null : dataCurrentAccordion = index" class="w-full px-4 py-3 text-left flex items-center justify-between text-sm text-white bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none">
-                      <span class="flex-shrink-0 flex items-center">
-                        <span x-show="!hasUserSelectedThisOption(item.id)" class="rounded-full border inline-flex justify-center items-center h-7 w-7 border-white/50" x-text="index + 3"></span>
-                        <span x-show="hasUserSelectedThisOption(item.id)" class="rounded-full bg-white text-[#464669] inline-flex justify-center items-center h-7 w-7">
-                          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <mask id="mask0_3_11156" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                              <rect width="24" height="24" fill="currentColor" />
+                  <template
+                    x-for="(item, index) in [
+                              {
+                                id: 'rcs-stone_color',
+                                title: 'Stone Color',
+                                video: 'yB1odIgnDAc',
+                                options: [
+                                  { id: 'rcs-stone_color-aqua', name: 'Aqua', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/stone_color/aqua.jpg' },
+                                  { id: 'rcs-stone_color-blue', name: 'Blue', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/stone_color/blue.jpg' },
+                                  { id: 'rcs-stone_color-green', name: 'Green', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/stone_color/green.jpg' },
+                                  { id: 'rcs-stone_color-orange', name: 'Orange', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/stone_color/orange.jpg' },
+                                  { id: 'rcs-stone_color-red', name: 'Red', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/stone_color/red.jpg' },
+                                  { id: 'rcs-stone_color-peach', name: 'Peach', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/stone_color/peach.jpg' },
+                                  { id: 'rcs-stone_color-pink', name: 'Pink', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/stone_color/pink.jpg' },
+                                  { id: 'rcs-stone_color-purple', name: 'Purple', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/stone_color/purple.jpg' },
+                                  { id: 'rcs-stone_color-yellow', name: 'Yellow', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/stone_color/yellow.jpg' },
+                                  { id: 'rcs-stone_color-white', name: 'White', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/stone_color/white.jpg' },
+                                ]
+                              },
+                              {
+                                id: 'rcs-stone_shapes',
+                                title: 'Stone Shapes',
+                                video: 'UM2h4jzEcsQ',
+                                options: [
+                                  { id: 'rcs-stone_shapes-round', name: 'Round', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/stone_shapes/round.jpg' },
+                                  { id: 'rcs-stone_shapes-oval', name: 'Oval', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/stone_shapes/oval.jpg' },
+                                  { id: 'rcs-stone_shapes-pear', name: 'Pear', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/stone_shapes/pear.jpg' },
+                                  { id: 'rcs-stone_shapes-square', name: 'Square', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/stone_shapes/square.jpg' },
+                                ]
+                              },
+                              {
+                                id: 'rcs-setting_styles',
+                                title: 'Setting Styles',
+                                video: 'Rvb4JSFg3Yw',
+                                options: [
+                                  { id: 'rcs-setting_styles-peg_head', name: 'Peg Head', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/setting_styles/peg_head.jpg' },
+                                  { id: 'rcs-setting_styles-halo', name: 'Halo', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/setting_styles/halo.jpg' },
+                                  { id: 'rcs-setting_styles-basket', name: 'Basket', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/setting_styles/basket.jpg' },
+                                  { id: 'rcs-setting_styles-tiara', name: 'Tiara', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/setting_styles/tiara.jpg' },
+                                  { id: 'rcs-setting_styles-trellis', name: 'Trellis', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/setting_styles/trellis.jpg' },
+                                  { id: 'rcs-setting_styles-tension', name: 'Tension', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/setting_styles/tension.jpg' },
+                                ]
+                              },
+                              {
+                                id: 'rcs-prong_styles',
+                                title: 'Prong Styles',
+                                video: 'UM2h4jzEcsQ',
+                                options: [
+                                  { id: 'rcs-prong_styles-claw', name: 'Claw', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/prong_styles/claw.jpg' },
+                                  { id: 'rcs-prong_styles-round', name: 'Round', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/prong_styles/round.jpg' },
+                                  { id: 'rcs-prong_styles-heart', name: 'Heart', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/prong_styles/heart.jpg' },
+                                ]
+                              },
+                              {
+                                id: 'rcs-band_styles',
+                                title: 'Band Styles',
+                                video: 'yB1odIgnDAc',
+                                options: [
+                                  { id: 'rcs-band_styles-knife_edge', name: 'Knife Edge', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/band_styles/knife_edge.png' },
+                                  { id: 'rcs-band_styles-round_edge', name: 'Round Edge', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/band_styles/round_edge.png' },
+                                  { id: 'rcs-band_styles-square_edge', name: 'Square Edge', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/band_styles/square_edge.png' },
+                                  { id: 'rcs-band_styles-tapered', name: 'Tapered', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/band_styles/tapered.png' },
+                                  { id: 'rcs-band_styles-twist', name: 'Twist', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/band_styles/twist.png' },
+                                ]
+                              },
+                              {
+                                id: 'rcs-accent_stones',
+                                title: 'Accent Stones',
+                                video: 'UM2h4jzEcsQ',
+                                options: [
+                                  { id: 'rcs-accent_stones-1', name: 'Bead', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/accent_stones/bead.jpg' },
+                                  { id: 'rcs-accent_stones-2', name: 'Pave', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/accent_stones/pave.jpg' },
+                                  { id: 'rcs-accent_stones-3', name: 'None', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/accent_stones/none.jpg' },
+                                ]
+                              },
+                              {
+                                id: 'rcs-band_material',
+                                title: 'Band Material',
+                                type: 'material',
+                                video: 'Rvb4JSFg3Yw',
+                                options: [
+                                  { id: 'rcs-band_material-1', name: 'Silver', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/band_material/silver.jpg' },
+                                  { id: 'rcs-band_material-2', name: 'Rose Gold', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/band_material/rose_gold.jpg' },
+                                  { id: 'rcs-band_material-3', name: 'White Gold', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/band_material/white_gold.jpg' },
+                                  { id: 'rcs-band_material-4', name: 'Yellow Gold', imageSrc: 'https://tamakito.com/wp-content/customise-img/customisation/ring/colored_stones/band_material/yellow_gold.jpg' },
+                                ]
+                              },
+                          ]"
+                  >
+                    <div
+                      class="tw-mb-3"
+                      x-data
+                      x-init="dataUserSelection[item.id] = ''"
+                    >
+                      <button
+                        @click="dataCurrentAccordion === index ? dataCurrentAccordion = null : dataCurrentAccordion = index"
+                        class="tw-w-full tw-px-4 tw-py-3 tw-text-left tw-flex tw-items-center tw-justify-between tw-text-sm tw-text-white tw-bg-[#464669] hover:tw-bg-[#4B4B89] tw-transition focus:tw-outline-none"
+                      >
+                        <span class="tw-flex tw-items-center tw-flex-shrink-0">
+                          <span
+                            x-show="!hasUserSelectedThisOption(item.id)"
+                            class="tw-inline-flex tw-items-center tw-justify-center tw-border tw-rounded-full tw-h-7 tw-w-7 border-white/50"
+                            x-text="index + 3"
+                          ></span>
+                          <span
+                            x-show="hasUserSelectedThisOption(item.id)"
+                            class="tw-rounded-full tw-bg-white tw-text-[#464669] tw-inline-flex tw-justify-center tw-items-center tw-h-7 tw-w-7"
+                          >
+                            <svg
+                              class="tw-w-5 tw-h-5"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <mask
+                                id="mask0_3_11156"
+                                style="mask-type: alpha"
+                                maskUnits="userSpaceOnUse"
+                                x="0"
+                                y="0"
+                                width="24"
+                                height="24"
+                              >
+                                <rect
+                                  width="24"
+                                  height="24"
+                                  fill="currentColor"
+                                />
+                              </mask>
+                              <g mask="url(#mask0_3_11156)">
+                                <path
+                                  d="M9.55001 18L3.85001 12.3L5.27501 10.875L9.55001 15.15L18.725 5.97498L20.15 7.39998L9.55001 18Z"
+                                  fill="currentColor"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                          <span class="tw-ml-2" x-text="item.title"></span>
+                        </span>
+                        <span class="tw-flex-grow tw-text-right tw-truncate">
+                          <span
+                            x-show="dataUserSelection[item.id]"
+                            class="tw-mx-4 tw-text-sm tw-opacity-80"
+                          >
+                            <template x-if="dataUserSelection[item.id]">
+                              <span
+                                x-text="item.options.find(o => o.id === dataUserSelection[item.id]) !== undefined ? item.options.find(o => o.id === dataUserSelection[item.id]).name : ''"
+                              ></span>
+                            </template>
+                          </span>
+                        </span>
+                        <span
+                          @click.stop="showVideoModal(item.video)"
+                          class="tw-inline-block group tw-ml-4"
+                        >
+                          <svg
+                            class="tw-w-5 tw-h-5 tw-text-white tw-transition group-hover:tw-opacity-100 tw-opacity-70"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <mask
+                              id="mask0_51_1068"
+                              style="mask-type: alpha"
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                              width="24"
+                              height="24"
+                            >
+                              <rect
+                                width="24"
+                                height="24"
+                                fill="currentColor"
+                              />
                             </mask>
-                            <g mask="url(#mask0_3_11156)">
-                              <path d="M9.55001 18L3.85001 12.3L5.27501 10.875L9.55001 15.15L18.725 5.97498L20.15 7.39998L9.55001 18Z" fill="currentColor" />
+                            <g mask="url(#mask0_51_1068)">
+                              <path
+                                d="M11.95 18C12.3 18 12.5958 17.8792 12.8375 17.6375C13.0792 17.3958 13.2 17.1 13.2 16.75C13.2 16.4 13.0792 16.1042 12.8375 15.8625C12.5958 15.6208 12.3 15.5 11.95 15.5C11.6 15.5 11.3042 15.6208 11.0625 15.8625C10.8208 16.1042 10.7 16.4 10.7 16.75C10.7 17.1 10.8208 17.3958 11.0625 17.6375C11.3042 17.8792 11.6 18 11.95 18ZM11.05 14.15H12.9C12.9 13.6 12.9625 13.1667 13.0875 12.85C13.2125 12.5333 13.5667 12.1 14.15 11.55C14.5833 11.1167 14.925 10.7042 15.175 10.3125C15.425 9.92083 15.55 9.45 15.55 8.9C15.55 7.96667 15.2083 7.25 14.525 6.75C13.8417 6.25 13.0333 6 12.1 6C11.15 6 10.3792 6.25 9.7875 6.75C9.19583 7.25 8.78333 7.85 8.55 8.55L10.2 9.2C10.2833 8.9 10.4708 8.575 10.7625 8.225C11.0542 7.875 11.5 7.7 12.1 7.7C12.6333 7.7 13.0333 7.84583 13.3 8.1375C13.5667 8.42917 13.7 8.75 13.7 9.1C13.7 9.43333 13.6 9.74583 13.4 10.0375C13.2 10.3292 12.95 10.6 12.65 10.85C11.9167 11.5 11.4667 11.9917 11.3 12.325C11.1333 12.6583 11.05 13.2667 11.05 14.15ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22Z"
+                                fill="currentColor"
+                              />
                             </g>
                           </svg>
                         </span>
-                        <span class="ml-2" x-text="item.title"></span>
-                      </span>
-                      <span class="truncate flex-grow text-right">
-                        <span x-show="dataUserSelection[item.id]" class="mx-4 text-sm opacity-80">
-                          <template x-if="dataUserSelection[item.id]">
-                            <span x-text="item.options.find(o => o.id === dataUserSelection[item.id]) !== undefined ? item.options.find(o => o.id === dataUserSelection[item.id]).name : ''"></span>
+                      </button>
+                      <div
+                        x-show.transition.duration.150="dataCurrentAccordion === index"
+                        class="tw-p-4 tw-bg-white tw-border tw-border-t-0 tw-border-gray-300"
+                      >
+                        <div
+                          class="tw-grid tw-grid-cols-2 tw-gap-4 sm:tw-grid-cols-3"
+                        >
+                          <template x-for="option in item.options">
+                            <label
+                              :for="option.id"
+                              class="tw-relative tw-cursor-pointer group"
+                            >
+                              <input
+                                type="radio"
+                                x-model="dataUserSelection[item.id]"
+                                :id="option.id"
+                                :value="option.id"
+                                class="tw-sr-only"
+                              />
+                              <img
+                                :src="option.imageSrc"
+                                class="tw-w-full tw-aspect-[1/0.8] tw-object-cover tw-border tw-border-b-0 tw-transition"
+                                :class="{ 'tw-border-[#464669]': dataUserSelection[item.id] === option.id, 'tw-border-gray-300': dataUserSelection[item.id] !== option.id }"
+                              />
+                              <div
+                                x-show="dataUserSelection[item.id] !== option.id"
+                                class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full group-hover:tw-bg-[#4B4B89] tw-opacity-5"
+                              ></div>
+                              <div
+                                x-show="dataUserSelection[item.id] === option.id"
+                                class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-bg-[#464669] tw-opacity-5"
+                              ></div>
+                              <div
+                                x-text="option.name"
+                                class="tw-font-serif tw-relative tw-z-10 tw-w-full tw-p-1 tw-text-center group-hover:tw-bg-opacity-100 tw-text-white tw-bg-[#464669] tw-transition"
+                                :class="{ 'tw-bg-opacity-100': dataUserSelection[item.id] === option.id, 'tw-bg-opacity-80': dataUserSelection[item.id] !== option.id }"
+                              ></div>
+                            </label>
                           </template>
-                        </span>
-                      </span>
-                      <span @click.stop="showVideoModal(item.video)" class="inline-block group">
-                        <svg class="w-5 h-5 text-white group-hover:opacity-100 opacity-70 transition" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <mask id="mask0_51_1068" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                            <rect width="24" height="24" fill="currentColor" />
-                          </mask>
-                          <g mask="url(#mask0_51_1068)">
-                            <path d="M11.95 18C12.3 18 12.5958 17.8792 12.8375 17.6375C13.0792 17.3958 13.2 17.1 13.2 16.75C13.2 16.4 13.0792 16.1042 12.8375 15.8625C12.5958 15.6208 12.3 15.5 11.95 15.5C11.6 15.5 11.3042 15.6208 11.0625 15.8625C10.8208 16.1042 10.7 16.4 10.7 16.75C10.7 17.1 10.8208 17.3958 11.0625 17.6375C11.3042 17.8792 11.6 18 11.95 18ZM11.05 14.15H12.9C12.9 13.6 12.9625 13.1667 13.0875 12.85C13.2125 12.5333 13.5667 12.1 14.15 11.55C14.5833 11.1167 14.925 10.7042 15.175 10.3125C15.425 9.92083 15.55 9.45 15.55 8.9C15.55 7.96667 15.2083 7.25 14.525 6.75C13.8417 6.25 13.0333 6 12.1 6C11.15 6 10.3792 6.25 9.7875 6.75C9.19583 7.25 8.78333 7.85 8.55 8.55L10.2 9.2C10.2833 8.9 10.4708 8.575 10.7625 8.225C11.0542 7.875 11.5 7.7 12.1 7.7C12.6333 7.7 13.0333 7.84583 13.3 8.1375C13.5667 8.42917 13.7 8.75 13.7 9.1C13.7 9.43333 13.6 9.74583 13.4 10.0375C13.2 10.3292 12.95 10.6 12.65 10.85C11.9167 11.5 11.4667 11.9917 11.3 12.325C11.1333 12.6583 11.05 13.2667 11.05 14.15ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22Z" fill="currentColor" />
-                          </g>
-                        </svg>
-                      </span>
-                    </button>
-                    <div x-show.transition.duration.150="dataCurrentAccordion === index" class="p-4 border border-t-0 border-gray-300 bg-white">
-                      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        <template x-for="option in item.options">
-                          <label :for="option.id" class="relative cursor-pointer group">
-                            <input type="radio" x-model="dataUserSelection[item.id]" :id="option.id" :value="option.id" class="sr-only" />
-                            <img :src="option.imageSrc" class="w-full aspect-[1/0.8] object-cover border border-b-0 transition" :class="{ 'border-[#464669]': dataUserSelection[item.id] === option.id, 'border-gray-300': dataUserSelection[item.id] !== option.id }" />
-                            <div x-show="dataUserSelection[item.id] !== option.id" class="absolute top-0 left-0 w-full h-full group-hover:bg-[#4B4B89] opacity-5"></div>
-                            <div x-show="dataUserSelection[item.id] === option.id" class="absolute top-0 left-0 w-full h-full bg-[#464669] opacity-5"></div>
-                            <div x-text="option.name" class="font-serif relative z-10 w-full p-1 text-center group-hover:bg-opacity-100 text-white bg-[#464669] transition" :class="{ 'bg-opacity-100': dataUserSelection[item.id] === option.id, 'bg-opacity-80': dataUserSelection[item.id] !== option.id }"></div>
-                          </label>
-                        </template>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </template>
+                  </template>
+                </div>
+              </template>
+
+              <div class="tw-flex tw-justify-between tw-gap-4 tw-mt-6">
+                <button
+                  :disabled="!hasUserSelectedAnyOption()"
+                  @click="dataUserSelection = {type: ''}"
+                  class="tw-px-4 tw-py-2 tw-text-[#464669] tw-flex-1 hover:tw-bg-gray-50 focus:tw-outline-none tw-border tw-border-gray-300 tw-bg-white"
+                  :class="{ 'tw-cursor-not-allowed tw-opacity-70': !hasUserSelectedAnyOption() }"
+                >
+                  Reset
+                </button>
+                <button
+                  :disabled="!hasUserSelectedAllOptions()"
+                  @click="isSubmitModalOpen = true"
+                  class="tw-px-4 tw-py-2 tw-text-white tw-flex-1 tw-bg-[#464669] hover:tw-bg-[#4B4B89] tw-transition focus:tw-outline-none"
+                  :class="{ 'tw-cursor-not-allowed tw-opacity-70': !hasUserSelectedAllOptions() }"
+                >
+                  Submit
+                </button>
               </div>
-            </template>
 
-            <div class="flex justify-between gap-4 mt-6">
-              <button :disabled="!hasUserSelectedAnyOption()" @click="dataUserSelection = {type: ''}" class="px-4 py-2 text-[#464669] flex-1 hover:bg-gray-50 focus:outline-none border border-gray-300 bg-white" :class="{ 'cursor-not-allowed opacity-70': !hasUserSelectedAnyOption() }">Reset</button>
-              <button :disabled="!hasUserSelectedAllOptions()" @click="isSubmitModalOpen = true" class="px-4 py-2 text-white flex-1 bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none" :class="{ 'cursor-not-allowed opacity-70': !hasUserSelectedAllOptions() }">Submit</button>
-            </div>
+              <!-- Submit Modal -->
+              <div
+                x-cloak
+                x-show="isSubmitModalOpen"
+                x-transition:enter="tw-transition tw-ease-out tw-duration-150"
+                x-transition:enter-start="tw-opacity-0"
+                x-transition:enter-end="tw-opacity-100"
+                x-transition:leave="tw-transition tw-ease-in tw-duration-150"
+                x-transition:leave-start="tw-opacity-100"
+                x-transition:leave-end="tw-opacity-0"
+                class="tw-fixed tw-inset-0 tw-z-[99999] tw-flex tw-items-center tw-justify-center tw-w-full tw-h-full tw-bg-black tw-bg-opacity-50"
+              >
+                <div
+                  class="tw-relative tw-w-full tw-max-w-md tw-p-6 tw-m-4 tw-bg-white tw-shadow-lg"
+                  @click.away="isSubmitModalOpen = false"
+                  @click.stop
+                >
+                  <button
+                    @click="isSubmitModalOpen = false"
+                    class="tw-absolute tw-text-xl tw-text-gray-800 tw-top-6 tw-right-6 hover:tw-text-gray-900 focus:tw-outline-none"
+                  >
+                    &#x2715;
+                  </button>
 
-            <!-- Submit Modal -->
-            <div x-cloak x-show="isSubmitModalOpen" x-transition:enter="transition ease-out duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-              <div class="relative w-full max-w-md p-6 m-4 bg-white shadow-lg" @click.away="isSubmitModalOpen = false" @click.stop>
-                <button @click="isSubmitModalOpen = false" class="absolute text-xl text-gray-800 top-6 right-6 hover:text-gray-900 focus:outline-none">&#x2715;</button>
+                  <h2 class="tw-mb-6 tw-text-xl">
+                    Please fill in your details:
+                  </h2>
+                  <form method="GET">
+                    <input
+                      type="hidden"
+                      name="selection"
+                      id="selection"
+                      :value="JSON.stringify(dataUserSelection)"
+                    />
 
-                <h2 class="mb-6 text-xl">Please fill in your details:</h2>
-                <form method="GET">
-                  <input type="hidden" name="selection" id="selection" :value="JSON.stringify(dataUserSelection)" />
-
-                  <div class="grid grid-cols-1 gap-x-8 gap-y-4">
-                    <div>
-                      <label for="u_name" class="block text-sm font-medium leading-6 text-gray-900">Full name</label>
-                      <div class="mt-2.5">
-                        <input type="text" name="u_name" required autocomplete="name" class="block w-full border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-blue-dark sm:text-sm sm:leading-6" />
+                    <div class="tw-grid tw-grid-cols-1 tw-gap-x-8 tw-gap-y-4">
+                      <div>
+                        <label
+                          for="u_name"
+                          class="tw-block tw-text-sm tw-font-medium tw-leading-6 tw-text-gray-900"
+                          >Full name</label
+                        >
+                        <div class="tw-mt-2.5">
+                          <input
+                            type="text"
+                            name="u_name"
+                            required
+                            autocomplete="name"
+                            class="tw-block tw-w-full tw-border-0 tw-px-3.5 tw-py-2 tw-text-gray-900 tw-ring-1 tw-ring-inset tw-ring-gray-300 placeholder:tw-text-gray-400 focus:tw-ring-2 focus:tw-ring-inset focus:ring-primary-blue-dark sm:tw-text-sm sm:tw-leading-6"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <label
+                          for="u_phone"
+                          class="tw-block tw-text-sm tw-font-medium tw-leading-6 tw-text-gray-900"
+                          >Phone number</label
+                        >
+                        <div class="tw-mt-2.5">
+                          <input
+                            type="tel"
+                            name="u_phone"
+                            autocomplete="tel"
+                            class="tw-block tw-w-full tw-border-0 tw-px-3.5 tw-py-2 tw-text-gray-900 tw-ring-1 tw-ring-inset tw-ring-gray-300 placeholder:tw-text-gray-400 focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-[#464669] sm:tw-text-sm sm:tw-leading-6"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <label
+                          for="u_email"
+                          class="tw-block tw-text-sm tw-font-medium tw-leading-6 tw-text-gray-900"
+                          >Email address</label
+                        >
+                        <div class="tw-mt-2.5">
+                          <input
+                            type="email"
+                            name="u_email"
+                            autocomplete="email"
+                            class="tw-block tw-w-full tw-border-0 tw-px-3.5 tw-py-2 tw-text-gray-900 tw-ring-1 tw-ring-inset tw-ring-gray-300 placeholder:tw-text-gray-400 focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-[#464669] sm:tw-text-sm sm:tw-leading-6"
+                          />
+                        </div>
                       </div>
                     </div>
-                    <div>
-                      <label for="u_phone" class="block text-sm font-medium leading-6 text-gray-900">Phone number</label>
-                      <div class="mt-2.5">
-                        <input type="tel" name="u_phone" autocomplete="tel" class="block w-full border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#464669] sm:text-sm sm:leading-6" />
-                      </div>
+                    <div class="tw-flex tw-mt-8">
+                      <button
+                        type="submit"
+                        class="tw-flex tw-items-center tw-py-2 tw-justify-center tw-w-full tw-text-white tw-flex-1 tw-bg-[#464669] hover:tw-bg-[#4B4B89] tw-transition focus:tw-outline-none tw-text-sm tw-font-medium"
+                      >
+                        Submit
+                      </button>
                     </div>
-                    <div>
-                      <label for="u_email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
-                      <div class="mt-2.5">
-                        <input type="email" name="u_email" autocomplete="email" class="block w-full border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#464669] sm:text-sm sm:leading-6" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="flex mt-8">
-                    <button type="submit" class="flex items-center py-2 justify-center w-full text-white flex-1 bg-[#464669] hover:bg-[#4B4B89] transition focus:outline-none text-sm font-medium">Submit</button>
-                  </div>
-                </form>
+                  </form>
+                </div>
               </div>
-            </div>
 
-            <!-- Video Modal -->
-            <div x-cloak x-show="isVideoModalOpen" x-transition:enter="transition ease-out duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-              <div x-on:click.away="hideVideoModal()" class="relative bg-white m-4 px-3 pb-3 pt-8 lg:pt-12 w-full max-w-4xl shadow-lg">
-                <button @click="hideVideoModal()" class="absolute top-1 right-4 lg:top-3 lg:right-6 text-lg lg:text-xl text-gray-900 focus:outline-none">&#x2715;</button>
-                <div x-show="dataCurrentPlayingVideo" class="w-full">
-                  <iframe class="aspect-video w-full h-full" :src="`https://www.youtube.com/embed/${dataCurrentPlayingVideo}`" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <!-- Video Modal -->
+              <div
+                x-cloak
+                x-show="isVideoModalOpen"
+                x-transition:enter="tw-transition tw-ease-out tw-duration-150"
+                x-transition:enter-start="tw-opacity-0"
+                x-transition:enter-end="tw-opacity-100"
+                x-transition:leave="tw-transition tw-ease-in tw-duration-150"
+                x-transition:leave-start="tw-opacity-100"
+                x-transition:leave-end="tw-opacity-0"
+                class="tw-fixed tw-inset-0 tw-z-[99999] tw-flex tw-items-center tw-justify-center tw-w-full tw-h-full tw-bg-black tw-bg-opacity-50"
+              >
+                <div
+                  x-on:click.away="hideVideoModal()"
+                  class="tw-relative tw-w-full tw-max-w-4xl tw-px-3 tw-pt-8 tw-pb-3 tw-m-4 tw-bg-white tw-shadow-lg lg:tw-pt-12"
+                >
+                  <button
+                    @click="hideVideoModal()"
+                    class="tw-absolute tw-text-lg tw-text-gray-900 tw-top-1 tw-right-4 lg:tw-top-3 lg:tw-right-6 lg:tw-text-xl focus:tw-outline-none"
+                  >
+                    &#x2715;
+                  </button>
+                  <div x-show="dataCurrentPlayingVideo" class="tw-w-full">
+                    <iframe
+                      class="tw-w-full tw-h-full tw-aspect-video"
+                      :src="`https://www.youtube.com/embed/${dataCurrentPlayingVideo}`"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
                 </div>
               </div>
             </div>
